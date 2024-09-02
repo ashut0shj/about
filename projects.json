@@ -1,0 +1,22 @@
+[
+    {
+        "name": "IIITNR-APP",
+        "description": "Developed an app using Flutter and Dart, facilitating event registration and form submissions for IIIT-NR students. Integrated Firebase for real-time database management, user authentication, and cloud storage for secure data handling.",
+        "link": "https://github.com/ashut0shj/IIITNR-APP"
+    },
+    {
+        "name": "Study-Simplify",
+        "description": "An educational platform using Python and Flask for backend development, integrating Assembly AI for text extraction and summarization from various media formats.",
+        "link": "https://github.com/ashut0shj/Study-Simplify"
+    },
+    {
+        "name": "Crossword Puzzle Generator",
+        "description": "Developed an AI algorithm using Constraint Satisfaction Problem (CSP) to generate ready-to-play crossword puzzles, deployed on a Flask-based interactive website.",
+        "link": "https://github.com/ashut0shj/Crossword-Puzzle-Generator"
+    },
+    {
+        "name": "RFID-based Home Security System",
+        "description": "Created a RFID-based home security system supporting RFID tags and OTPs as door keys with an inbuilt alarm system, built for RaspberryPi.",
+        "link": "https://github.com/ashut0shj/RFID-Home-Security"
+    }
+]
