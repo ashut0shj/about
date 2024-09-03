@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text for better readability */
+    background-color: #000;
+    color: #ddd;
     line-height: 1.6;
     transition: all 0.3s ease;
 }
@@ -17,19 +17,12 @@ header .top-bar {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    border-bottom: 2px solid #8A2BE2; /* Purple border */
+    border-bottom: 2px solid #6a0dad;
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    background-color: #000; /* Black background to blend with the page */
-    z-index: 1000; /* Ensure it stays on top */
-    
-}
-.main {
-    margin: 20px;
-    padding: 20px;
-    padding-top: 80px; /* Add extra padding to account for the height of the top bar and additional margin */
+    background-color: #000;
+    z-index: 10;
 }
 
 header .top-bar nav ul {
@@ -43,38 +36,38 @@ header .top-bar nav ul li {
 
 header .top-bar nav ul li a {
     text-decoration: none;
-    color: #8A2BE2; /* Purple text */
+    color: #ddd;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 header .top-bar nav ul li a:hover {
-    color: #E6E6FA; /* Lavender hover text color */
+    color: #f0f0f0;
 }
 
-.resume-button {
+.resume-button, .view-project-button {
     text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid #8A2BE2; /* Purple border */
+    border: 2px solid #6a0dad;
     font-weight: bold;
-    color: #8A2BE2; /* Purple text */
-    background-color: #000; /* Black background */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #fff;
+    background-color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.resume-button:hover {
-    background-color: #8A2BE2; /* Lavender background on hover */
-    color: #000; /* Black text color on hover for contrast */
+.resume-button:hover, .view-project-button:hover {
+    background-color: #6a0dad;
+    color: #fff;
 }
 
 .main {
     margin: 20px;
     padding: 20px;
-    padding-top: calc(15px + 2px + 15px); /* Adding padding equal to the height of the top bar */
+    padding-top: 80px; /* Adjust for fixed top bar */
 }
 
 .section {
-    padding: 60px 0;
+    padding: 60px 20px;
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
@@ -82,13 +75,13 @@ header .top-bar nav ul li a:hover {
 }
 
 .section h2 {
-    font-size: 2.8em;
-    margin-bottom: 30px;
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 .section p {
-    font-size: 1.15em;
-    margin: 15px 0;
+    font-size: 1.1em;
+    margin: 10px 0;
 }
 
 .container {
@@ -99,32 +92,33 @@ header .top-bar nav ul li a:hover {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
 }
 
 .skill-item {
     padding: 20px;
-    border: 1px solid #8A2BE2; /* Purple border */
+    border: 1px solid #6a0dad;
     border-radius: 8px;
-    background-color: #2E2E2E; /* Dark background */
-    color: #E6E6FA; /* Lavender text */
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #111;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .skill-item:hover {
-    background-color: #8A2BE2; /* Lavender background on hover */
-    color: #2E2E2E; /* Dark text color on hover for contrast */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    background-color: #6a0dad;
+    color: #fff;
 }
 
 .experience-item,
 .project-item {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 20px;
-    border: 1px solid #8A2BE2; /* Purple border */
+    border: 1px solid #6a0dad;
     border-radius: 8px;
-    background-color: #2E2E2E; /* Dark background */
-    color: #E6E6FA; /* Lavender text */
+    background-color: #111;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -135,29 +129,26 @@ header .top-bar nav ul li a:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-.project-item h3,
-.experience-item h3 {
-    font-size: 1.8em;
+.project-item h3 {
+    font-size: 1.6em;
     margin-bottom: 10px;
 }
 
-.project-item p,
-.experience-item p {
+.project-item p {
     font-size: 1em;
+    color: #ccc;
 }
 
-.project-item a,
-.experience-item a {
+.project-item a {
     text-decoration: none;
     font-weight: bold;
-    color: #8A2BE2; /* Purple text */
-    border-bottom: 1px solid #8A2BE2; /* Purple border */
+    color: #6a0dad;
+    border-bottom: 1px solid #6a0dad;
     transition: color 0.3s ease;
 }
 
-.project-item a:hover,
-.experience-item a:hover {
-    color: #E6E6FA; /* Lavender text on hover */
+.project-item a:hover {
+    color: #fff;
 }
 
 .accomplishments-container,
@@ -168,19 +159,18 @@ header .top-bar nav ul li a:hover {
 
 .accomplishments-box {
     padding: 20px;
-    border: 1px solid #8A2BE2; /* Purple border */
+    border: 1px solid #6a0dad;
     border-radius: 8px;
-    background-color: #2E2E2E; /* Dark background */
-    color: #E6E6FA; /* Lavender text */
+    background-color: #111;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .accomplishment-item {
     padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid #8A2BE2; /* Purple border */
+    border: 1px solid #6a0dad;
     border-radius: 8px;
-    background-color: #000; /* Black background */
-    color: #E6E6FA; /* Lavender text */
+    background-color: #000;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -191,58 +181,107 @@ header .top-bar nav ul li a:hover {
 
 .contact-info {
     padding: 15px;
-    border: 1px solid #8A2BE2; /* Purple border */
+    border: 1px solid #6a0dad;
     border-radius: 8px;
-    background-color: #2E2E2E; /* Dark background */
-    color: #E6E6FA; /* Lavender text */
+    background-color: #111;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 0.9em;
 }
 
 .contact-info a {
-    color: #8A2BE2; /* Purple links */
+    color: #8a2be2;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-    color: #E6E6FA; /* Lavender hover color */
+    color: #ddd;
 }
 
 footer {
     padding: 30px 0;
-    border-top: 2px solid #8A2BE2; /* Purple border */
+    border-top: 2px solid #6a0dad;
     text-align: center;
-    background-color: #2E2E2E; /* Dark background */
-    color: #E6E6FA; /* Lavender text */
+    background-color: #000;
 }
 
 footer p {
     font-size: 0.9em;
-    color: #E6E6FA; /* Lavender text */
-}
-
-.view-project-button {
-    display: inline-block;
-    padding: 10px 20px;
-    border: 2px solid #8A2BE2; /* Purple border */
-    border-radius: 5px;
-    background-color: #000; /* Black background */
-    color: #8A2BE2; /* Purple text */
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.view-project-button:hover {
-    background-color: #8A2BE2; /* Lavender background on hover */
-    color: #000; /* Black text color on hover for contrast */
+    color: #ccc;
 }
 
 @keyframes fadeIn {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .top-bar nav ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .top-bar nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .main {
+        padding: 20px;
+        padding-top: 100px; /* Adjust for fixed top bar */
+    }
+
+    .section h2 {
+        font-size: 2em;
+    }
+
+    .section p {
+        font-size: 1em;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .skill-item {
+        font-size: 0.9em;
+    }
+
+    .experience-item,
+    .project-item {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .section h2 {
+        font-size: 1.5em;
+    }
+
+    .section p {
+        font-size: 0.9em;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .skill-item {
+        font-size: 0.8em;
+    }
+
+    .experience-item,
+    .project-item {
+        font-size: 0.8em;
     }
 }
