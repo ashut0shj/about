@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Fetch and display experience data
     fetch('experience.json')
         .then(response => response.json())
         .then(data => {
@@ -13,8 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${exp.description}</p>`;
                 experienceList.appendChild(expItem);
             });
-        });
+        })
+        .catch(error => console.error('Error fetching experience data:', error));
 
+    // Fetch and display project data
     fetch('projects.json')
         .then(response => response.json())
         .then(data => {
@@ -25,11 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 projItem.innerHTML = `
                     <h3>${proj.name}</h3>
                     <p>${proj.description}</p>
-                    <a href="${proj.link}" target="_blank">View Project</a>`;
+                    <a href="${proj.link}" target="_blank" class="view-project-button">View Project</a>`;
                 projectsList.appendChild(projItem);
             });
-        });
+        })
+        .catch(error => console.error('Error fetching projects data:', error));
 
+    // Intersection Observer for animating sections
     const sections = document.querySelectorAll('.section');
     const options = {
         threshold: 0.1
