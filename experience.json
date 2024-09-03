@@ -1,29 +1,23 @@
-[
-    {
-        "title": "Junior Placement Coordinator",
-        "organization": "Training and Placement Cell",
+{
+    "experience": [
+      {
+        "role": "Junior Placement Coordinator",
+        "organization": "Training and Placement Cell, IIIT Naya Raipur",
         "duration": "March 2024 – Present",
-        "details": [
-            "Organized and coordinated campus recruitment drives, ensuring smooth operations and efficient communication.",
-            "Collaborated with companies to align their hiring needs with student profiles, facilitating successful placements."
-        ]
-    },
-    {
-        "title": "Vice Secretary",
-        "organization": "The Society of Coders",
-        "duration": "Dec. 2022 – Present",
-        "details": [
-            "Question setter and hosted multiple coding contests and hackathons.",
-            "Served as a mentor for freshmen students and took sessions for junior batches."
-        ]
-    },
-    {
-        "title": "Events and PR Member",
+        "description": "Coordinated campus recruitment drives and managed logistics for interviews and placement sessions. Acted as a liaison between companies and students, ensuring alignment between hiring needs and student profiles. Streamlined the placement process by introducing new tools and methodologies for effective communication and scheduling."
+      },
+      {
+        "role": "Vice Secretary",
+        "organization": "The Society of Coders, IIIT Naya Raipur",
+        "duration": "December 2022 – Present",
+        "description": "Led the organization and management of multiple coding contests and hackathons, including the development of questions and judging criteria. Mentored junior students in coding and problem-solving, conducted workshops, and provided guidance on improving their programming skills. Fostered a collaborative environment to encourage learning and innovation among members."
+      },
+      {
+        "role": "Events and PR Member",
         "organization": "E-Cell IIIT-NR",
-        "duration": "Jan. 2023 – Aug. 2023",
-        "details": [
-            "Organised multiple entrepreneurship-related events.",
-            "Worked in multiple teams and gained experience in event hosting."
-        ]
-    }
-]
+        "duration": "January 2023 – August 2023",
+        "description": "Organized and executed various entrepreneurship-related events, including workshops, seminars, and guest lectures. Managed public relations efforts, including promoting events through social media and coordinating with external partners. Gained experience in event planning, team collaboration, and stakeholder communication."
+      }
+    ]
+  }
+  

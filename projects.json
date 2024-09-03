@@ -1,22 +1,25 @@
-[
-    {
+{
+    "projects": [
+      {
         "name": "IIITNR-APP",
-        "description": "Developed an app using Flutter and Dart, facilitating event registration and form submissions for IIIT-NR students. Integrated Firebase for real-time database management, user authentication, and cloud storage for secure data handling.",
+        "description": "Developed a cross-platform mobile app for IIIT Naya Raipur to streamline event registrations, requisitions, and student club management. Integrated Firebase for real-time data updates, authentication, and cloud storage, ensuring secure and smooth operation across both Android and iOS platforms.",
         "link": "https://github.com/ashut0shj/IIITNR-APP"
-    },
-    {
+      },
+      {
         "name": "Study-Simplify",
-        "description": "An educational platform using Python and Flask for backend development, integrating Assembly AI for text extraction and summarization from various media formats.",
+        "description": "Built an educational platform using Flask and Python for backend development, integrating AI for text extraction, summarization, and quiz generation. Enhanced learning by creating a responsive web interface that facilitates efficient study management for students and teachers.",
         "link": "https://github.com/ashut0shj/Study-Simplify"
-    },
-    {
+      },
+      {
         "name": "Crossword Puzzle Generator",
-        "description": "Developed an AI algorithm using Constraint Satisfaction Problem (CSP) to generate ready-to-play crossword puzzles, deployed on a Flask-based interactive website.",
+        "description": "Created an AI-driven crossword puzzle generator using Constraint Satisfaction Problem (CSP) algorithms. Leveraged OpenAI's API for advanced puzzle design, and deployed on a Flask-based website for an interactive user experience.",
         "link": "https://github.com/ashut0shj/Crossword-Puzzle-Generator"
-    },
-    {
-        "name": "RFID-based Home Security System",
-        "description": "Created a RFID-based home security system supporting RFID tags and OTPs as door keys with an inbuilt alarm system, built for RaspberryPi.",
+      },
+      {
+        "name": "RFID-Based Home Security System",
+        "description": "Developed an RFID-based security solution for home use, integrating OTP and RFID tags for secure door access with a built-in alarm system, using RaspberryPi. Designed to offer a scalable, affordable security option for residential purposes.",
         "link": "https://github.com/ashut0shj/RFID-Home-Security"
-    }
-]
+      }
+    ]
+  }
+  
