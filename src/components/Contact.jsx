@@ -13,10 +13,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "your_service_id",
-        "your_template_id",
+        "service_qj0iux2",
+        "template_j5jxp8u",
         e.target,
-        "your_user_id"
+        "Nf_1585r3JYAPjOq3"
       )
       .then(() => {
         setStatus("Send Message");
@@ -38,7 +38,7 @@ const Contact = () => {
         transition={{ duration: 1 }}
         className="text-4xl font-bold text-yellowAccent mb-4"
       >
-        Get in Touch
+        Lets get in Touch
       </motion.h2>
 
       <motion.p
@@ -47,7 +47,7 @@ const Contact = () => {
         transition={{ duration: 1, delay: 0.2 }}
         className="text-gray-400 text-lg mb-10"
       >
-        Feel free to reach out for opportunities or just a friendly chat! 🚀
+        Feel free to reach out...
       </motion.p>
 
       <div className="flex justify-center gap-6 mb-12">

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaPython, FaJava, FaReact, FaDatabase, FaCloud, FaCode } from "react-icons/fa";
+import { FaPython, FaReact, FaDatabase, FaCode } from "react-icons/fa";
 import { SiCplusplus, SiDjango, SiFlask, SiFirebase, SiFlutter, SiJavascript, SiMysql, SiTensorflow } from "react-icons/si";
 
 const techStack = [

@@ -1,6 +1,5 @@
 import { useState, useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
-import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
