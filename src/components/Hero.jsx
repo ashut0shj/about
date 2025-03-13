@@ -24,7 +24,7 @@ const Hero = () => {
         transition={{ duration: 1.2, delay: 0.2 }}
         className="text-lg text-gray-400 mt-2"
       >
-        Full-Stack Developer | Blockchain Enthusiast
+        Software Developer | Tech Enthusiast | Problem Solver
       </motion.p>
       
       <motion.div
@@ -33,10 +33,10 @@ const Hero = () => {
         transition={{ duration: 1.2, delay: 0.4 }}
         className="flex gap-6 mt-4"
       >
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/ashut0shj" target="_blank" rel="noopener noreferrer">
           <FaGithub size={30} className="text-white hover:text-purpleCard transition" />
         </a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/ashut0sh28/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin size={30} className="text-white hover:text-purpleCard transition" />
         </a>
       </motion.div>

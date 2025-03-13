@@ -8,7 +8,7 @@ const projects = [
     description:
       "A secure and transparent blockchain-based voting system using Solidity and Django.",
     tech: ["Solidity", "Django", "React", "Hardhat"],
-    link: "#",
+    link: "https://github.com/ashut0shj/e-voting",
   },
   
   {
@@ -30,14 +30,14 @@ const projects = [
     description:
       "Created an AI-driven crossword puzzle generator using Constraint Satisfaction Problem (CSP) algorithms. Leveraged OpenAI's API for advanced puzzle design, and deployed on a Flask-based website for an interactive user experience.",
     tech: ["Python", "Flask", "OpenAI API", "CSP Algorithms"],
-    link: "https://github.com/ashut0shj/CrosswordPuzzleGenerator",
+    link: "https://github.com/ashut0shj/minor-study-simplify",
   },
   {
     title: "Google Sheets Mail Merge with Gmail",
     description:
       "Automated bulk email sending using Google Sheets and Gmail. Fetches recipient details from a sheet, merges placeholders into a Gmail draft, and sends personalized emails automatically. Supports CC, inline images, attachments, and email tracking.",
     tech: ["Google Apps Script", "Gmail API", "Google Sheets"],
-    link: "https://github.com/ashut0shj/mail-merge-automation"
+    link: "https://github.com/ashut0shj/mail_merge"
 },
 {
   title: "Image Quality Enhancement",

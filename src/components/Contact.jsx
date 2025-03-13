@@ -52,9 +52,9 @@ const Contact = () => {
 
       <div className="flex justify-center gap-6 mb-12">
         {[
-          { icon: FaEnvelope, link: "mailto:your.email@example.com" },
-          { icon: FaGithub, link: "https://github.com/yourgithub" },
-          { icon: FaLinkedin, link: "https://linkedin.com/in/yourlinkedin" },
+          { icon: FaEnvelope, link: "mailto:ashutosh22102@iiitnr.edu.in" },
+          { icon: FaGithub, link: "https://github.com/ashut0shj" },
+          { icon: FaLinkedin, link: "https://www.linkedin.com/in/ashut0sh28/" },
         ].map(({ icon: Icon, link }, i) => (
           <motion.a
             key={i}
