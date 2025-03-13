@@ -49,7 +49,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <section id="experience" className="py-16 px-8">
+    <section id="experience" className="py-16 px-8 relative">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -60,7 +60,8 @@ const Experience = () => {
       </motion.h2>
 
       <div className="relative">
-        {/* Scroll progress line */}
+        {/* Timeline Line (Fills Dynamically) */}
+        <div className="absolute left-6 top-0 w-1 bg-gray-700 rounded-full h-full" />
         <motion.div
           className="absolute left-6 top-0 w-1 bg-gradient-to-b from-yellowAccent to-purple-700 rounded-full"
           style={{ height: `${scrollProgress * 100}%` }}
@@ -69,9 +70,14 @@ const Experience = () => {
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 10px 20px rgba(255, 217, 0, 0.3)",
+              transition: { duration: 0.3, type: "spring", stiffness: 200 },
+            }}
             className="mb-12 ml-16 relative"
           >
             {/* Icon */}
@@ -80,7 +86,7 @@ const Experience = () => {
             </div>
 
             {/* Experience Content */}
-            <div className="bg-purpleCard p-6 rounded-lg shadow-md border border-purple-600">
+            <div className="bg-purpleCard p-6 rounded-lg shadow-lg border border-purple-500">
               <p className="text-sm text-yellowAccent">{exp.year}</p>
               <h3 className="text-xl font-semibold text-white">{exp.role}</h3>
               <p className="text-gray-400">{exp.company}</p>

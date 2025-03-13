@@ -32,12 +32,10 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-16 px-8 text-center relative">
-      {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        viewport={{ once: true }}
         className="text-4xl font-bold text-yellowAccent mb-4"
       >
         Get in Touch
@@ -45,58 +43,74 @@ const Contact = () => {
 
       <motion.p
         initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.2 }}
-        viewport={{ once: true }}
         className="text-gray-400 text-lg mb-10"
       >
         Feel free to reach out for opportunities or just a friendly chat! 🚀
       </motion.p>
 
-      {/* Social Links */}
       <div className="flex justify-center gap-6 mb-12">
-        <motion.a
-          href="mailto:your.email@example.com"
-          whileHover={{ scale: 1.1 }}
-          className="bg-purple-700 p-3 rounded-full text-white hover:bg-yellowAccent transition"
-        >
-          <FaEnvelope size={24} />
-        </motion.a>
-        <motion.a
-          href="https://github.com/yourgithub"
-          target="_blank"
-          whileHover={{ scale: 1.1 }}
-          className="bg-purple-700 p-3 rounded-full text-white hover:bg-yellowAccent transition"
-        >
-          <FaGithub size={24} />
-        </motion.a>
-        <motion.a
-          href="https://linkedin.com/in/yourlinkedin"
-          target="_blank"
-          whileHover={{ scale: 1.1 }}
-          className="bg-purple-700 p-3 rounded-full text-white hover:bg-yellowAccent transition"
-        >
-          <FaLinkedin size={24} />
-        </motion.a>
+        {[
+          { icon: FaEnvelope, link: "mailto:your.email@example.com" },
+          { icon: FaGithub, link: "https://github.com/yourgithub" },
+          { icon: FaLinkedin, link: "https://linkedin.com/in/yourlinkedin" },
+        ].map(({ icon: Icon, link }, i) => (
+          <motion.a
+            key={i}
+            href={link}
+            target="_blank"
+            whileHover={{ scale: 1.1 }}
+            className="bg-purple-700 p-3 rounded-full text-white hover:bg-yellowAccent transition"
+          >
+            <Icon size={24} />
+          </motion.a>
+        ))}
       </div>
 
-      {/* Contact Form */}
       <motion.form
         initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        viewport={{ once: true }}
         onSubmit={sendEmail}
-        className="max-w-lg mx-auto bg-purpleCard p-8 rounded-lg shadow-md border border-purple-600"
+        className="relative max-w-lg mx-auto p-8 rounded-lg shadow-lg border border-purple-600 bg-purpleCard overflow-hidden"
       >
+        {/* Particles Effect */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="absolute inset-0 pointer-events-none"
+        >
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: Math.random() * 20 }}
+              animate={{
+                opacity: [0, 1, 1, 0],
+                y: [Math.random() * 20, -20, Math.random() * 20],
+              }}
+              transition={{
+                duration: 5 + Math.random() * 5,
+                repeat: Infinity,
+                delay: Math.random() * 3,
+              }}
+              className="absolute bg-yellowAccent w-1 h-1 rounded-full"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+              }}
+            />
+          ))}
+        </motion.div>
+
         {["user_name", "user_email", "message"].map((field, index) => (
           <motion.div
             key={field}
-            className="mb-6"
+            className="mb-6 relative"
             initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: index * 0.2 }}
-            viewport={{ once: true }}
           >
             <label className="block text-left text-gray-300 text-sm mb-1">
               {field === "user_name"
@@ -131,7 +145,6 @@ const Contact = () => {
           </motion.div>
         ))}
 
-        {/* Animated Send Button */}
         <motion.button
           type="submit"
           whileHover={{ scale: 1.05 }}
@@ -142,7 +155,6 @@ const Contact = () => {
         </motion.button>
       </motion.form>
 
-      {/* Success Popup */}
       <AnimatePresence>
         {showPopup && (
           <motion.div

@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
+import profileImg from "./profile.jpg"; 
+
 
 const About = () => {
   return (
     <section id="about" className="py-16 text-center flex flex-col items-center">
       <motion.img
-        src="/profile.jpg"  // Change this to your actual image path
+        src={profileImg}
         alt="Ashutosh Jaiswal"
         className="w-40 h-40 rounded-full border-4 border-purpleCard shadow-lg"
         initial={{ opacity: 0, scale: 0.8 }}

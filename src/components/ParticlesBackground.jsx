@@ -12,19 +12,22 @@ const ParticlesBackground = () => {
       id="tsparticles"
       init={particlesInit}
       options={{
-        fullScreen: { enable: false },
-        background: { color: "transparent" },
+        fullScreen: { enable: true, zIndex: -1 },
+        background: { color: "black" },
         particles: {
           number: { value: 150 },
-          color: { value: "#7B61FF" },
+          color: { value: "#ffffff" },
           shape: { type: "circle" },
-          opacity: { value: 0.7 },
-          size: { value: 5 },
-          move: { enable: true, speed: 1.5, random: true },
-          links: { enable: true, distance: 150, color: "#FFD700", opacity: 0.2 },
+          opacity: { value: { min: 0.1, max: 1 }, animation: { enable: true, speed: 1, sync: false } },
+          size: { value: { min: 1, max: 3 } },
+          move: { enable: true, speed: 0.5, direction: "none", random: true },
+          links: { enable: false },
         },
       }}
-      className="absolute top-0 left-0 w-full h-full -z-10"
+      
+      
+      className="fixed inset-0 w-full h-full pointer-events-none z-0"
+
     />
   );
 };
