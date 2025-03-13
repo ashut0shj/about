@@ -31,6 +31,7 @@ const experiences = [
 
 const Experience = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [selectedExp, setSelectedExp] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,11 +91,49 @@ const Experience = () => {
               <p className="text-sm text-yellowAccent">{exp.year}</p>
               <h3 className="text-xl font-semibold text-white">{exp.role}</h3>
               <p className="text-gray-400">{exp.company}</p>
-              <p className="text-gray-300 mt-2">{exp.description}</p>
+
+              {/* Description for Desktop */}
+              <p className="text-gray-300 mt-2 hidden md:block">{exp.description}</p>
+
+              {/* Mobile View: Show Preview & Read More */}
+              <p className="text-gray-300 mt-2 md:hidden">
+                {exp.description.slice(0, 50)}...
+              </p>
+              <button
+                className="mt-2 text-yellowAccent md:hidden"
+                onClick={() => setSelectedExp(exp)}
+              >
+                Read More →
+              </button>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {/* Read More Modal */}
+      {selectedExp && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="bg-darkBg p-6 rounded-lg shadow-lg max-w-md w-full text-white"
+          >
+            <h3 className="text-xl font-semibold text-yellowAccent">
+              {selectedExp.role}
+            </h3>
+            <p className="text-gray-400">{selectedExp.company}</p>
+            <p className="text-gray-300 mt-2">{selectedExp.description}</p>
+
+            <button
+              className="mt-4 px-4 py-2 bg-purpleCard rounded-lg hover:bg-yellowAccent transition-all duration-300"
+              onClick={() => setSelectedExp(null)}
+            >
+              Close
+            </button>
+          </motion.div>
+        </div>
+      )}
     </section>
   );
 };

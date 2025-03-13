@@ -1,36 +1,36 @@
 import { motion } from "framer-motion";
-import profileImg from "./profile.jpg"; 
-
+// import profileImg from "./profile.png"; // Ensure it's a transparent PNG
 
 const About = () => {
   return (
-    <section id="about" className="py-16 text-center flex flex-col items-center">
-      <motion.img
-        src={profileImg}
-        alt="Ashutosh Jaiswal"
-        className="w-40 h-40 rounded-full border-4 border-purpleCard shadow-lg"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
+    <section id="about" className="py-16 px-6 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+      {/* Left Side (Text) */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-      />
-      
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-4xl font-bold text-yellowAccent mt-4"
+        className="text-center md:text-left flex-1"
       >
-        Ashutosh Jaiswal
-      </motion.h2>
+        <h2 className="text-4xl font-bold text-yellowAccent">
+          Ashutosh Jaiswal
+        </h2>
+        <p className="mt-4 text-gray-400 text-lg">
+          I am stupid
+        </p>
+      </motion.div>
 
-      <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2, delay: 0.2 }}
-        className="mt-4 text-gray-400 max-w-2xl"
+      {/* Right Side (Image) */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+        className="flex justify-center flex-1"
       >
-        I am stupid
-      </motion.p>
+        <img
+          src="/profile.jpg"
+          alt="Ashutosh Jaiswal"
+        />
+      </motion.div>
     </section>
   );
 };

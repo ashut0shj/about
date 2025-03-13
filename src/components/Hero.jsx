@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // Import navigation hook
 import ParticlesBackground from "./ParticlesBackground";
 
 const Hero = () => {
+  const navigate = useNavigate(); // Initialize navigation
+
   return (
     <section id="home" className="relative h-screen flex flex-col justify-center items-center text-center">
       <ParticlesBackground />
@@ -38,16 +41,16 @@ const Hero = () => {
         </a>
       </motion.div>
       
-      <motion.a
+      {/* View Resume Button */}
+      <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.6 }}
-        href="/resume.pdf"
-        download
+        onClick={() => navigate("/resume")} // Redirect to Resume Page
         className="mt-6 px-6 py-3 bg-purpleCard text-white font-semibold rounded-lg hover:bg-yellowAccent transition"
       >
-        Download Resume
-      </motion.a>
+        View Resume
+      </motion.button>
     </section>
   );
 };
