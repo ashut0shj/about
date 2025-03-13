@@ -27,8 +27,7 @@ const About = () => {
         transition={{ duration: 1.2, delay: 0.2 }}
         className="mt-4 text-gray-400 max-w-2xl"
       >
-        I am a passionate developer with expertise in Full-Stack Web Development and Blockchain.
-        I enjoy building scalable applications and exploring new technologies.
+        I am stupid
       </motion.p>
     </section>
   );
