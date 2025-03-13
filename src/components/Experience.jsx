@@ -1,31 +1,31 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaBriefcase, FaCode, FaBook } from "react-icons/fa";
+import { FaBriefcase, FaCode, FaMoneyBill } from "react-icons/fa";
 
 const experiences = [
   {
     year: "2025 - Present",
-    role: "Industry-Academia Meet (IAM) Lead",
-    company: "IIIT Naya Raipur",
+    role: "Senior Placement Coordinator",
+    company: "Training and Placement Cell, IIIT Naya Raipur",
     description:
-      "Leading the Industry-Academia Meet, organizing collaborations between companies and students, and managing networking events.",
+      "Leading the placement team, coordinating campus recruitment drives, and ensuring smooth interactions between students and recruiters. Implementing new strategies to improve placement processes and student employability.",
     icon: <FaBriefcase />,
   },
   {
-    year: "2025",
-    role: "Blockchain Developer",
-    company: "Personal Project",
+    year: "2024 - Present",
+    role: "Vice Secretary",
+    company: "The Society of Coders, IIIT Naya Raipur",
     description:
-      "Developed a blockchain-based voting system using Solidity and Django, ensuring secure and transparent elections.",
+      "Led the organization of coding contests and hackathons. Mentored junior students in problem-solving, conducted workshops, and fostered a collaborative learning environment.",
     icon: <FaCode />,
   },
   {
-    year: "2024 - 2025",
-    role: "Researcher",
-    company: "IEEE Paper on Image Enhancement",
+    year: "2022 - 2023",
+    role: "Events and PR Member",
+    company: "E-Cell IIIT-NR",
     description:
-      "Conducted research on sequential filtering techniques for image quality enhancement and prepared an IEEE research paper.",
-    icon: <FaBook />,
+      "Organized and executed entrepreneurship-related events, managed public relations, and coordinated with external partners for guest lectures and workshops.",
+    icon: <FaMoneyBill />,
   },
 ];
 
