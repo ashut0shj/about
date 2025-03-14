@@ -1,34 +1,67 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // Import navigation hook
+import { FaGithub, FaLinkedin, FaChevronDown } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import ParticlesBackground from "./ParticlesBackground";
-import { FaChevronDown } from "react-icons/fa"; // Import scroll down icon
 
 const Hero = () => {
-  const navigate = useNavigate(); // Initialize navigation
+  const navigate = useNavigate();
+
+  // Typing Effect State
+  const fullText = "< Software Developer | Tech Enthusiast | Problem Solver > ";
+  const [typedText, setTypedText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [cursorVisible, setCursorVisible] = useState(true);
+
+  // Typing Effect Logic
+  useEffect(() => {
+    if (index < fullText.length) {
+      const timeout = setTimeout(() => {
+        setTypedText((prev) => prev + fullText[index]);
+        setIndex(index + 1);
+      }, 25); 
+      return () => clearTimeout(timeout);
+    }
+  }, [index]);
+
+  // Blinking Cursor Effect
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setCursorVisible((prev) => !prev);
+    }, 500);
+    return () => clearInterval(cursorInterval);
+  }, []);
 
   return (
     <section id="home" className="relative h-screen flex flex-col justify-center items-center text-center">
       <ParticlesBackground />
-      
+
       <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent"
-      >
-        Ashutosh Jaiswal
-      </motion.h1>
-      
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  whileHover={{
+    textShadow: ["0px 0px 10px rgba(255,0,150,0.5)", "0px 0px 15px rgba(0,255,255,0.5)"],
+    x: [0, -5, 5, -5, 5, 0],
+    transition: { duration: 0.2, repeat: Infinity }
+  }}
+  className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent"
+>
+  Ashutosh Jaiswal
+</motion.h1>
+
+      {/* Typing Effect */}
       <motion.p
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.2 }}
         className="text-lg text-gray-400 mt-2"
       >
-        Software Developer | Tech Enthusiast | Problem Solver
+        {typedText}
+        <span className="text-gray-400 text-lg">{cursorVisible ? "█" : ""}</span>
       </motion.p>
-      
+
+      {/* Social Links */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -42,13 +75,13 @@ const Hero = () => {
           <FaLinkedin size={30} className="text-white hover:text-purpleCard transition" />
         </a>
       </motion.div>
-      
+
       {/* View Resume Button */}
       <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.6 }}
-        onClick={() => navigate("/resume")} // Redirect to Resume Page
+        onClick={() => navigate("/resume")}
         className="mt-6 px-6 py-3 bg-purpleCard text-white font-semibold rounded-lg hover:bg-yellowAccent transition"
       >
         View Resume

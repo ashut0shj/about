@@ -27,7 +27,7 @@ const About = () => {
   <br /><br />
   When I'm not coding, you’ll probably find me debugging my life choices or pretending to be productive.
 </p>
-
+<span className="animate-pulse">|</span>
       </motion.div>
 
       {/* Right Side (Image) */}
@@ -35,19 +35,29 @@ const About = () => {
   initial={{ opacity: 1, x: 50 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 1 }}
-  className="flex flex-col items-center flex-1 relative z-10"
+  className="flex flex-col items-center justify-center"
 >
-  {/* Image */}
-  <div className="rounded-lg">
+  {/* Image Animation - Now Properly Positioned */}
+  <motion.div
+    initial={{ y: 50, opacity: 0 }} // Starts slightly lower
+    whileInView={{ y: 0, opacity: 1 }}
+    transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+    className="" // Ensures image is above the line
+  >
     <img
       src="/pr1.png"
       alt="Ashutosh Jaiswal"
       className="w-[280px] h-[280px] object-cover rounded-lg"
     />
-  </div>
+  </motion.div>
 
-  {/* Gradient Line Below the Image */}
-  <div className="w-[320px] h-[4px] bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 rounded-full"></div>
+  {/* Gradient Line - Positioned Below the Image */}
+  <motion.div
+    initial={{ width: 0 }}
+    whileInView={{ width: "330px" }} // Matches image width
+    transition={{ duration: 1, ease: "easeOut" }}
+    className="  h-[4px] bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 rounded-full"
+  ></motion.div>
 </motion.div>
 
     </section>
