@@ -19,7 +19,7 @@ const Hero = () => {
       const timeout = setTimeout(() => {
         setTypedText((prev) => prev + fullText[index]);
         setIndex(index + 1);
-      }, 25); 
+      }, 40); 
       return () => clearTimeout(timeout);
     }
   }, [index]);
@@ -37,17 +37,13 @@ const Hero = () => {
       <ParticlesBackground />
 
       <motion.h1
-  initial={{ opacity: 0, y: -20 }}
+  initial={{ opacity: 0, y: -70 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  whileHover={{
-    textShadow: ["0px 0px 10px rgba(255,0,150,0.5)", "0px 0px 15px rgba(0,255,255,0.5)"],
-    x: [0, -5, 5, -5, 5, 0],
-    transition: { duration: 0.2, repeat: Infinity }
-  }}
+  transition={{ duration: 1.5 }}
+  
   className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent"
 >
-  Ashutosh Jaiswal
+  {"{ Ashutosh Jaiswal }"}
 </motion.h1>
 
       {/* Typing Effect */}
@@ -92,7 +88,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 1 }}
-        className="absolute bottom-10 flex flex-col items-center"
+        className="absolute bottom-12 flex flex-col items-center"
       >
         <span className="text-gray-400 text-sm mb-1">Scroll Down</span>
         <motion.div
