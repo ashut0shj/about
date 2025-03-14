@@ -8,7 +8,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   // Typing Effect State
-  const fullText = "Software Developer | Tech Enthusiast | Problem Solver ";
+  const fullText = "Software Developer | Tech Enthusiast | Problem Solver";
   const [typedText, setTypedText] = useState("");
   const [index, setIndex] = useState(0);
   const [cursorVisible, setCursorVisible] = useState(true);
@@ -54,7 +54,7 @@ const Hero = () => {
         className="text-lg text-gray-400 mt-2"
       >
         {typedText}
-        <span className="text-gray-400 text-lg">{cursorVisible ? "█" : ""}</span>
+        <span className="text-gray-400 ">{cursorVisible ? "█" : ""}</span>
       </motion.p>
 
       {/* Social Links */}
