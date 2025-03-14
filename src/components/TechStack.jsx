@@ -51,25 +51,28 @@ const TechStack = () => {
   return (
     <section id="techstack" className="py-16 text-center">
       <motion.h2
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent mb-8"
->
-  Tech Stack
-</motion.h2>
-
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent mb-8"
+      >
+        Tech Stack
+      </motion.h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
         {techStack.map((category, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
+            viewport={{ once: true }}
             className="bg-purpleCard p-6 rounded-lg shadow-lg text-left"
           >
-            <h3 className="text-2xl font-semibold text-yellowAccent mb-4">{category.category}</h3>
+            <h3 className="text-2xl font-semibold text-yellowAccent mb-4">
+              {category.category}
+            </h3>
             <div className="grid grid-cols-2 gap-4">
               {category.skills.map((skill, i) => (
                 <div key={i} className="flex items-center gap-2 text-white">

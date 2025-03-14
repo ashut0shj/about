@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaBriefcase, FaCode, FaMoneyBill } from "react-icons/fa";
 
@@ -30,51 +30,37 @@ const experiences = [
 ];
 
 const Experience = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [selectedExp, setSelectedExp] = useState(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById("experience");
-      if (section) {
-        const top = section.getBoundingClientRect().top;
-        const height = section.offsetHeight;
-        const screenHeight = window.innerHeight;
-        const scrolled = Math.min(1, Math.max(0, (screenHeight - top) / height));
-        setScrollProgress(scrolled);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <section id="experience" className="py-16 px-8 relative">
       <motion.h2
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent text-center mb-12"
->
-  Experience
-</motion.h2>
-
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent text-center mb-12"
+      >
+        Experience
+      </motion.h2>
 
       <div className="relative">
-        {/* Timeline Line (Fills Dynamically) */}
+        {/* Timeline Line */}
         <div className="absolute left-6 top-0 w-1 bg-gray-700 rounded-full h-full" />
         <motion.div
           className="absolute left-6 top-0 w-1 bg-gradient-to-b from-yellowAccent to-purple-700 rounded-full"
-          style={{ height: `${scrollProgress * 100}%` }}
+          whileInView={{ height: "100%" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          viewport={{ once: true }}
         />
 
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
+            viewport={{ once: true }}
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 10px 20px rgba(255, 217, 0, 0.3)",

@@ -155,6 +155,7 @@ const Contact = () => {
           {status}
         </motion.button>
       </motion.form>
+      
 
       <AnimatePresence>
         {showPopup && (
@@ -167,6 +168,7 @@ const Contact = () => {
           >
             🎉 Message Sent Successfully!
           </motion.div>
+          
         )}
       </AnimatePresence>
     </section>

@@ -9,6 +9,8 @@ import Contact from "./components/Contact";
 import ParticlesBackground from "./components/ParticlesBackground";
 import ResumePage from "./components/ResumePage"; // Import new Resume Page
 import TechStack from "./components/TechStack";
+import FunProfile from "./components/FunProfile";
+
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
               </>
             } />
             <Route path="/resume" element={<ResumePage />} />
+            <Route path="/fun-profile" element={<FunProfile />} /> {/* New Route */}
+
           </Routes>
         </div>
       </Router>

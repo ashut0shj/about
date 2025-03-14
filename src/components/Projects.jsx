@@ -63,22 +63,23 @@ const Projects = () => {
   return (
     <section id="projects" className="py-16 text-center">
       <motion.h2
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent mb-8"
->
-    Projects
-</motion.h2>
-
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent mb-8"
+      >
+        Projects
+      </motion.h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
         {projects.map((project, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
+            viewport={{ once: true }}
             whileHover={{
               scale: 1.08,
               boxShadow: "0px 10px 20px rgba(255, 217, 0, 0.3)",
@@ -138,5 +139,4 @@ const Projects = () => {
     </section>
   );
 };
-
 export default Projects;

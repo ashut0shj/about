@@ -11,8 +11,12 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleNavigation = (target) => {
+    setIsOpen(false); // Close menu on navigation
+
     if (target === "resume") {
       navigate("/resume");
+    } else if (target === "fun-profile") {
+      navigate("/fun-profile");
     } else {
       if (location.pathname !== "/") {
         navigate("/");
@@ -23,15 +27,15 @@ const Navbar = () => {
         document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
       }
     }
-    setIsOpen(false);
   };
 
   return (
     <nav className="fixed top-0 w-full bg-transparent shadow-md py-4 px-6 flex justify-between items-center z-50">
       <RouterLink to="/" className="text-lg font-bold text-yellowAccent">
-        Portfolio
+        ashut0shj
       </RouterLink>
 
+      {/* Desktop Navbar */}
       <div className="hidden md:flex gap-6">
         {["Home", "About", "Projects", "Experience", "Contact"].map((item) => (
           <button
@@ -49,6 +53,12 @@ const Navbar = () => {
           Resume
         </button>
         <button
+          onClick={() => navigate("/fun-profile")}
+          className="cursor-pointer text-white  px-4 py-2 rounded-lg hover:bg-yellowAccent transition-all duration-300"
+        >
+          ❤️ Fun Profile
+        </button>
+        <button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
           className="bg-purpleCard p-2 rounded-full text-white hover:bg-yellowAccent transition-all duration-300"
         >
@@ -56,12 +66,14 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Mobile Menu Button */}
       <div className="md:hidden">
         <button onClick={() => setIsOpen(!isOpen)} className="text-white text-2xl">
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden fixed top-0 left-0 w-full h-screen backdrop-blur-md bg-gradient-to-b from-black/80 via-darkBg0/85 to-[#c7a2ff1a] flex flex-col items-center justify-center space-y-6 transition-opacity duration-300">
           {["Home", "About", "Projects", "Experience", "Contact"].map((item) => (
@@ -74,16 +86,28 @@ const Navbar = () => {
             </button>
           ))}
           <button
-            onClick={() => navigate("/resume")}
+            onClick={() => handleNavigation("resume")}
             className="text-xl text-white bg-purpleCard px-6 py-3 rounded-lg hover:bg-yellowAccent transition-all duration-300"
           >
             Resume
+          </button>
+          <button
+            onClick={() => handleNavigation("fun-profile")}
+            className="text-xl text-white bg-purpleCard px-6 py-3 rounded-lg hover:bg-yellowAccent transition-all duration-300"
+          >
+            ❤️ Fun Profile
           </button>
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="mt-4 bg-purpleCard p-3 rounded-full text-white hover:bg-yellowAccent transition-all duration-300"
           >
             {theme === "dark" ? <BsSun size={24} /> : <BsMoon size={24} />}
+          </button>
+          <button
+            onClick={() => setIsOpen(false)} // Explicit close button
+            className="absolute top-5 right-6 text-white text-2xl"
+          >
+            <FaTimes />
           </button>
         </div>
       )}
