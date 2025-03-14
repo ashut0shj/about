@@ -33,14 +33,13 @@ const Contact = () => {
   return (
     <section id="contact" className="py-16 px-8 text-center relative">
       <motion.h2
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent text-center mb-12"
->
-  Lets get in touch
-</motion.h2>
-
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent text-center mb-12"
+      >
+        Let's get in touch
+      </motion.h2>
 
       <motion.p
         initial={{ opacity: 0, y: 10 }}
@@ -76,35 +75,6 @@ const Contact = () => {
         onSubmit={sendEmail}
         className="relative max-w-lg mx-auto p-8 rounded-lg shadow-lg border border-purple-600 bg-purpleCard overflow-hidden"
       >
-        {/* Particles Effect */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="absolute inset-0 pointer-events-none"
-        >
-          {[...Array(15)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: Math.random() * 20 }}
-              animate={{
-                opacity: [0, 1, 1, 0],
-                y: [Math.random() * 20, -20, Math.random() * 20],
-              }}
-              transition={{
-                duration: 5 + Math.random() * 5,
-                repeat: Infinity,
-                delay: Math.random() * 3,
-              }}
-              className="absolute bg-yellowAccent w-1 h-1 rounded-full"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-            />
-          ))}
-        </motion.div>
-
         {["user_name", "user_email", "message"].map((field, index) => (
           <motion.div
             key={field}
@@ -155,7 +125,6 @@ const Contact = () => {
           {status}
         </motion.button>
       </motion.form>
-      
 
       <AnimatePresence>
         {showPopup && (
@@ -168,9 +137,34 @@ const Contact = () => {
           >
             🎉 Message Sent Successfully!
           </motion.div>
-          
         )}
       </AnimatePresence>
+
+      {/* Closing Image & Quote */}
+      <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, delay: 0.5 }}
+  className="mt-20 flex flex-col items-center"
+>
+  <img
+    src="/pr2.png"
+    alt="Stay Connected"
+    className="w-64 h-auto  rounded-lg shadow-xl"
+  />  
+  <div className=" mb-6 w-[320px] h-[4px] bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 rounded-full"></div>
+
+  <motion.p
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1, delay: 0.7 }}
+    className="text-xl text-gray-300 italic text-center"
+  >
+    Opportunities don’t happen.
+    <br />You create them.
+  </motion.p>
+</motion.div>
+
     </section>
   );
 };

@@ -32,19 +32,23 @@ const About = () => {
 
       {/* Right Side (Image) */}
       <motion.div
-        initial={{ opacity: 1, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-        className="flex justify-center flex-1 relative z-10"
-      >
-        <div className=" bg-black rounded-lg shadow-lg">
-          <img
-            src="/profile.jpg"
-            alt="Ashutosh Jaiswal"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-      </motion.div>
+  initial={{ opacity: 1, x: 50 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1 }}
+  className="flex flex-col items-center flex-1 relative z-10"
+>
+  {/* Image */}
+  <div className="rounded-lg">
+    <img
+      src="/pr1.png"
+      alt="Ashutosh Jaiswal"
+      className="w-[280px] h-[280px] object-cover rounded-lg"
+    />
+  </div>
+
+  {/* Gradient Line Below the Image */}
+  <div className="w-[320px] h-[4px] bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 rounded-full"></div>
+</motion.div>
 
     </section>
   );
