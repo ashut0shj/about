@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; // Import navigation hook
 import ParticlesBackground from "./ParticlesBackground";
+import { FaChevronDown } from "react-icons/fa"; // Import scroll down icon
 
 const Hero = () => {
   const navigate = useNavigate(); // Initialize navigation
@@ -9,14 +10,15 @@ const Hero = () => {
   return (
     <section id="home" className="relative h-screen flex flex-col justify-center items-center text-center">
       <ParticlesBackground />
+      
       <motion.h1
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
-  className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent"
->
-  Ashutosh Jaiswal
-</motion.h1>
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent"
+      >
+        Ashutosh Jaiswal
+      </motion.h1>
       
       <motion.p
         initial={{ opacity: 0, y: 10 }}
@@ -51,6 +53,22 @@ const Hero = () => {
       >
         View Resume
       </motion.button>
+
+      {/* Scroll Down Indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, delay: 1 }}
+        className="absolute bottom-10 flex flex-col items-center"
+      >
+        <span className="text-gray-400 text-sm mb-1">Scroll Down</span>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <FaChevronDown className="text-white text-2xl" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
