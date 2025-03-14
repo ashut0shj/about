@@ -8,7 +8,7 @@ const Hero = () => {
   const navigate = useNavigate();
 
   // Typing Effect State
-  const fullText = "< Software Developer | Tech Enthusiast | Problem Solver > ";
+  const fullText = "Software Developer | Tech Enthusiast | Problem Solver ";
   const [typedText, setTypedText] = useState("");
   const [index, setIndex] = useState(0);
   const [cursorVisible, setCursorVisible] = useState(true);
@@ -43,7 +43,7 @@ const Hero = () => {
   
   className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent"
 >
-  {"{ Ashutosh Jaiswal }"}
+  {"{Ashutosh Jaiswal}"}
 </motion.h1>
 
       {/* Typing Effect */}
