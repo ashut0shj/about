@@ -91,12 +91,12 @@ const Navbar = () => {
           >
             Resume
           </button>
-          <button
+          {/* <button
             onClick={() => handleNavigation("fun-profile")}
             className="text-xl text-white bg-purpleCard px-6 py-3 rounded-lg hover:bg-yellowAccent transition-all duration-300"
           >
             ❤️ Fun Profile
-          </button>
+          </button> */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="mt-4 bg-purpleCard p-3 rounded-full text-white hover:bg-yellowAccent transition-all duration-300"
