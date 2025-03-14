@@ -51,7 +51,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.2 }}
-        className="text-base text-gray-400 mt-2"
+        className="text-sm text-gray-400 mt-2"
       >
         {typedText}
         <span className="text-gray-400 ">{cursorVisible ? "█" : ""}</span>
