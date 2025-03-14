@@ -52,13 +52,14 @@ const Experience = () => {
   return (
     <section id="experience" className="py-16 px-8 relative">
       <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-4xl font-bold text-yellowAccent text-center mb-12"
-      >
-        Experience
-      </motion.h2>
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent text-center mb-12"
+>
+  Experience
+</motion.h2>
+
 
       <div className="relative">
         {/* Timeline Line (Fills Dynamically) */}

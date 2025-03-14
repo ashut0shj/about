@@ -10,13 +10,13 @@ const Hero = () => {
     <section id="home" className="relative h-screen flex flex-col justify-center items-center text-center">
       <ParticlesBackground />
       <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-5xl font-bold text-yellowAccent"
-      >
-        Ashutosh Jaiswal
-      </motion.h1>
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent"
+>
+  Ashutosh Jaiswal
+</motion.h1>
       
       <motion.p
         initial={{ opacity: 0, y: 10 }}

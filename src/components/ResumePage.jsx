@@ -19,7 +19,7 @@ const ResumePage = () => {
       {/* Background Particles */}
       <ParticlesBackground />
 
-      <h2 className="text-3xl font-bold mb-4 text-yellowAccent">My Resume</h2>
+      <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent mb-8">My Resume</h2>
 
 {/* Download Button */}
 <a

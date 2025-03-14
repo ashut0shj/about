@@ -11,9 +11,11 @@ const About = () => {
         transition={{ duration: 1 }}
         className="text-center md:text-left flex-1"
       >
-        <h2 className="text-4xl font-bold text-yellowAccent">
-          Ashutosh Jaiswal
-        </h2>
+        <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
+  Ashutosh Jaiswal
+</h2>
+
+
 
         <p className="mt-4 text-gray-400 text-lg">
           i am stupid <br></br>
@@ -30,16 +32,20 @@ const About = () => {
 
       {/* Right Side (Image) */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
+        initial={{ opacity: 1, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="flex justify-center flex-1"
+        className="flex justify-center flex-1 relative z-10"
       >
-        <img
-          src="/profile.jpg"
-          alt="Ashutosh Jaiswal"
-        />
+        <div className=" bg-black rounded-lg shadow-lg">
+          <img
+            src="/profile.jpg"
+            alt="Ashutosh Jaiswal"
+            className="w-full h-full object-cover rounded-lg"
+          />
+        </div>
       </motion.div>
+
     </section>
   );
 };

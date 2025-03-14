@@ -63,13 +63,14 @@ const Projects = () => {
   return (
     <section id="projects" className="py-16 text-center">
       <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-4xl font-bold text-yellowAccent mb-8"
-      >
-        Projects
-      </motion.h2>
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent mb-8"
+>
+    Projects
+</motion.h2>
+
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
         {projects.map((project, index) => (

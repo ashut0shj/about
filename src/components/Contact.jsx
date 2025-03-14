@@ -33,13 +33,14 @@ const Contact = () => {
   return (
     <section id="contact" className="py-16 px-8 text-center relative">
       <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-4xl font-bold text-yellowAccent mb-4"
-      >
-        Lets get in Touch
-      </motion.h2>
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent text-center mb-12"
+>
+  Lets get in touch
+</motion.h2>
+
 
       <motion.p
         initial={{ opacity: 0, y: 10 }}
