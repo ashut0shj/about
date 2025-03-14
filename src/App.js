@@ -31,7 +31,7 @@ function App() {
               </>
             } />
             <Route path="/resume" element={<ResumePage />} />
-            <Route path="/fun-profile" element={<FunProfile />} /> {/* New Route */}
+            <Route path="/f" element={<FunProfile />} /> {/* New Route */}
 
           </Routes>
         </div>
