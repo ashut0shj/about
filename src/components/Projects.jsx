@@ -4,11 +4,11 @@ import { useState } from "react";
 
 const projects = [
   {
-    title: "Blockchain Voting System",
+    title: "Ballot Block",
     description:
       "A secure and transparent blockchain-based voting system using Solidity and Django.",
     tech: ["Solidity", "Django", "React", "Hardhat"],
-    link: "https://github.com/ashut0shj/e-voting",
+    link: "https://github.com/ashut0shj/Ballot-Block",
   },
   
   {
