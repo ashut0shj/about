@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   const [status, setStatus] = useState("Send Message");
@@ -55,6 +55,7 @@ const Contact = () => {
           { icon: FaEnvelope, link: "mailto:ashutosh22102@iiitnr.edu.in" },
           { icon: FaGithub, link: "https://github.com/ashut0shj" },
           { icon: FaLinkedin, link: "https://www.linkedin.com/in/ashut0sh28/" },
+          { icon: FaWhatsapp, link: "https://wa.me/9129093900" },
         ].map(({ icon: Icon, link }, i) => (
           <motion.a
             key={i}

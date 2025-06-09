@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaChevronDown } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaChevronDown, FaWhatsapp } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ParticlesBackground from "./ParticlesBackground";
@@ -70,6 +70,9 @@ const Hero = () => {
         <a href="https://www.linkedin.com/in/ashut0sh28/" target="_blank" rel="noopener noreferrer">
           <FaLinkedin size={30} className="text-white hover:text-purpleCard transition" />
         </a>
+        <a href="https://wa.me/9129093900" target="_blank" rel="noopener noreferrer">
+            <FaWhatsapp size={30} className="text-white hover:text-purpleCard transition" />
+          </a>
       </motion.div>
 
       {/* View Resume Button */}
