@@ -18,7 +18,7 @@ const projects = [
     link: "https://github.com/ashut0shj/CrosswordPuzzleGenerator",
   },
   {
-    title: "Blockchain Voting System",
+    title: "Ballot-Block",
     description:
       "Built a decentralized voting platform with Solidity and React, enabling secure, member-only, tamper-proof elections. Used IPFS for immutable metadata storage and integrated MetaMask for authentication and real-time vote tracking.",
     tech: ["Solidity", "Hardhat", "React", "Ethers.js", "IPFS", "MetaMask"],

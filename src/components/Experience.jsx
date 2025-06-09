@@ -77,13 +77,13 @@ const Experience = () => {
             <div className="bg-purpleCard p-6 rounded-lg shadow-lg border border-purple-500">
               <p className="text-sm text-yellowAccent">{exp.year}</p>
               <h3 className="text-xl font-semibold text-white">{exp.role}</h3>
-              <p className="text-gray-400">{exp.company}</p>
+              <p className="text-gray">{exp.company}</p>
 
               {/* Description for Desktop */}
-              <p className="text-gray-300 mt-2 hidden md:block">{exp.description}</p>
+              <p className="text-gray-100 mt-2 hidden md:block">{exp.description}</p>
 
               {/* Mobile View: Show Preview & Read More */}
-              <p className="text-gray-300 mt-2 md:hidden">
+              <p className="text-gray-100 mt-2 md:hidden">
                 {exp.description.slice(0, 50)}...
               </p>
               <button
@@ -109,8 +109,8 @@ const Experience = () => {
             <h3 className="text-xl font-semibold text-yellowAccent">
               {selectedExp.role}
             </h3>
-            <p className="text-gray-400">{selectedExp.company}</p>
-            <p className="text-gray-300 mt-2">{selectedExp.description}</p>
+            <p className="text-gray-100">{selectedExp.company}</p>
+            <p className="text-gray-200 mt-2">{selectedExp.description}</p>
 
             <button
               className="mt-4 px-4 py-2 bg-purpleCard rounded-lg hover:bg-yellowAccent transition-all duration-300"
