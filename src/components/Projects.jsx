@@ -1,16 +1,37 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-
 const projects = [
   {
-    title: "Ballot Block",
+    title: "Study-Simplify",
     description:
-      "A secure and transparent blockchain-based voting system using Solidity and Django.",
-    tech: ["Solidity", "Django", "React", "Hardhat"],
-    link: "https://github.com/ashut0shj/Ballot-Block",
+      "Built an AI-powered platform to transcribe, summarize, and generate questions from PDFs, PPTs, and images using FastAPI and NLP models. Used Tesseract OCR, T5, and BERT for text extraction, summarization, and question generation.",
+    tech: ["FastAPI", "React", "Tesseract OCR", "NLP", "Transformers", "T5", "BERT"],
+    link: "https://github.com/ashut0shj/minor-study-simplify",
+    liveDemo: "https://study-simplify-three.vercel.app",
   },
-  
+  {
+    title: "Crossword Puzzle Generator",
+    description:
+      "Designed an automated crossword puzzle generator using Python and OpenAI for NLP, allowing users to create custom puzzles. Implemented word selection algorithms that generated puzzles with accurate difficulty scaling and user-defined themes.",
+    tech: ["AI Algorithms", "OpenAI", "Flask", "Python", "OOP", "NLP", "LLM"],
+    link: "https://github.com/ashut0shj/CrosswordPuzzleGenerator",
+  },
+  {
+    title: "Blockchain Voting System",
+    description:
+      "Built a decentralized voting platform with Solidity and React, enabling secure, member-only, tamper-proof elections. Used IPFS for immutable metadata storage and integrated MetaMask for authentication and real-time vote tracking.",
+    tech: ["Solidity", "Hardhat", "React", "Ethers.js", "IPFS", "MetaMask"],
+    link: "https://github.com/ashut0shj/e-voting",
+  },
+  {
+    title: "Swift Guess",
+    description:
+      "Released a guessing game on Android, Web, and Windows with dynamic difficulty levels, hint system, scoring, and UI inspired by aesthetics. Integrated Firebase for real-time word/hint fetching, and added features like animated feedback, heart-based lives, and persistent local high scores.",
+    tech: ["Flutter", "Firebase", "Dart"],
+    link: "https://github.com/ashut0shj/swift_guess",
+    liveDemo: "https://swift-guess.vercel.app/",
+  },
   {
     title: "IIITNR-APP",
     description:
@@ -19,33 +40,19 @@ const projects = [
     link: "https://github.com/ashut0shj/iiit-app",
   },
   {
-    title: "Study-Simplify",
-    description:
-      "Built an educational platform using Flask and Python for backend development, integrating AI for text extraction, summarization, and quiz generation. Enhanced learning by creating a responsive web interface that facilitates efficient study management for students and teachers.",
-    tech: ["Flask", "Python", "AI", "HTML", "CSS"],
-    link: "https://github.com/ashut0shj/minor-study-simplify",
-  },
-  {
-    title: "Crossword Puzzle Generator",
-    description:
-      "Created an AI-driven crossword puzzle generator using Constraint Satisfaction Problem (CSP) algorithms. Leveraged OpenAI's API for advanced puzzle design, and deployed on a Flask-based website for an interactive user experience.",
-    tech: ["Python", "Flask", "OpenAI API", "CSP Algorithms"],
-    link: "https://github.com/ashut0shj/minor-study-simplify",
-  },
-  {
     title: "Google Sheets Mail Merge with Gmail",
     description:
       "Automated bulk email sending using Google Sheets and Gmail. Fetches recipient details from a sheet, merges placeholders into a Gmail draft, and sends personalized emails automatically. Supports CC, inline images, attachments, and email tracking.",
     tech: ["Google Apps Script", "Gmail API", "Google Sheets"],
     link: "https://github.com/ashut0shj/mail_merge"
-},
-{
-  title: "Image Quality Enhancement",
-  description:
-    "An IEEE research project on image enhancement using sequential filtering techniques.",
-  tech: ["Python", "OpenCV", "Image Processing"],
-  link: "#",
-},
+  },
+  {
+    title: "Image Quality Enhancement",
+    description:
+      "An IEEE research project on image enhancement using sequential filtering techniques.",
+    tech: ["Python", "OpenCV", "Image Processing"],
+    link: "#",
+  },
   {
     title: "RFID-Based Home Security System",
     description:
@@ -53,9 +60,7 @@ const projects = [
     tech: ["Raspberry Pi", "RFID", "Python", "IoT"],
     link: "https://github.com/ashut0shj/doorlock",
   },
-
 ];
-
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -89,7 +94,7 @@ const Projects = () => {
             onClick={() => setSelectedProject(project)}
           >
             <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-            <p className="text-gray-300 mt-2">{project.description}</p>
+            <p className="text-gray-300 mt-2 text-sm leading-relaxed">{project.description}</p>
             <div className="flex flex-wrap gap-2 mt-3">
               {project.tech.map((tech, i) => (
                 <span
@@ -100,35 +105,79 @@ const Projects = () => {
                 </span>
               ))}
             </div>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-4 px-4 py-2 bg-purple-700 text-white font-semibold rounded-md shadow-md hover:bg-purple-600 transition-all duration-300"
-            >
-              View Project →
-            </a>
+            <div className="flex gap-2 mt-4">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-4 py-2 bg-purple-700 text-white font-semibold rounded-md shadow-md hover:bg-purple-600 transition-all duration-300 text-sm"
+                onClick={(e) => e.stopPropagation()}
+              >
+                View Code →
+              </a>
+              {project.liveDemo && (
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-500 transition-all duration-300 text-sm"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Live Demo →
+                </a>
+              )}
+            </div>
           </motion.div>
         ))}
       </div>
 
-      {/* Modal for ReadMe */}
+      {/* Modal for Project Details */}
       {selectedProject && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="bg-darkBg p-8 rounded-lg shadow-lg w-96"
+            className="bg-darkBg p-8 rounded-lg shadow-lg max-w-md mx-4"
           >
-            <h3 className="text-2xl font-semibold text-yellowAccent">
+            <h3 className="text-2xl font-semibold text-yellowAccent mb-4">
               {selectedProject.title}
             </h3>
-            <p className="text-gray-300 mt-2">{selectedProject.readme}</p>
-            <div className="mt-4 flex justify-end">
+            <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+              {selectedProject.description}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-6">
+              {selectedProject.tech.map((tech, i) => (
+                <span
+                  key={i}
+                  className="bg-purple-700 text-white px-2 py-1 text-xs rounded"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-2 justify-end">
+              <a
+                href={selectedProject.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-purple-700 text-white font-semibold rounded-md shadow-md hover:bg-purple-600 transition-all duration-300 text-sm"
+              >
+                View Code
+              </a>
+              {selectedProject.liveDemo && (
+                <a
+                  href={selectedProject.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-500 transition-all duration-300 text-sm"
+                >
+                  Live Demo
+                </a>
+              )}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="px-4 py-2 bg-purple-700 text-white font-semibold rounded-md shadow-md hover:bg-purple-600 transition-all duration-300"
+                className="px-4 py-2 bg-gray-600 text-white font-semibold rounded-md shadow-md hover:bg-gray-500 transition-all duration-300 text-sm"
               >
                 Close
               </button>
@@ -139,4 +188,5 @@ const Projects = () => {
     </section>
   );
 };
+
 export default Projects;

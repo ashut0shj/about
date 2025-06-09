@@ -19,7 +19,7 @@ const About = () => {
 
         <p className="mt-4 text-gray-400 text-lg">
           i am stupid <br></br>
-  I love building cool and useful tech—whether it’s web apps, AI tools, or something completely new.  
+  I am a poha enthusiast I love building cool and useful tech—whether it’s web apps, AI tools, or something completely new.  
   I enjoy solving problems, breaking things (so I can fix them better), and making tech do the hard work.
   <br /><br />
   I work with C/C++, Python, JavaScript, Django, React, and Solidity, always looking for new ways to create and innovate.  

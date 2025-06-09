@@ -1,16 +1,38 @@
 import { motion } from "framer-motion";
-import { FaPython, FaReact, FaDatabase, FaCode } from "react-icons/fa";
-import { SiCplusplus, SiDjango, SiFlask, SiFirebase, SiFlutter, SiJavascript, SiMysql, SiTensorflow } from "react-icons/si";
+import { 
+  FaPython, FaReact, FaDatabase, FaCode, FaGitAlt, FaGithub, 
+  FaDocker, FaAws, FaHtml5, FaCss3Alt, FaChartLine, FaBrain, 
+  FaRobot
+} from "react-icons/fa";
+import { 
+  SiCplusplus, SiDjango, SiFlask, SiFirebase, SiFlutter, 
+  SiJavascript, SiMysql, SiTensorflow, SiTailwindcss, 
+  SiPytorch, SiGooglecloud 
+} from "react-icons/si";
+
+import { RiFlashlightFill } from "react-icons/ri"; 
 
 const techStack = [
   {
     category: "Languages",
     skills: [
-      { name: "C/C++", icon: <SiCplusplus /> },
       { name: "Python", icon: <FaPython /> },
+      { name: "C/C++", icon: <SiCplusplus /> },
       { name: "Dart", icon: <SiFlutter /> },
       { name: "JavaScript", icon: <SiJavascript /> },
-      { name: "HTML/CSS", icon: <FaCode /> },
+      { name: "Solidity", icon: <FaCode /> }, 
+      { name: "HTML", icon: <FaHtml5 /> },
+      { name: "CSS", icon: <FaCss3Alt /> },
+    ],
+  },
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React", icon: <FaReact /> },
+      { name: "Flutter", icon: <SiFlutter /> },
+      { name: "HTML", icon: <FaHtml5 /> },
+      { name: "CSS", icon: <FaCss3Alt /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
     ],
   },
   {
@@ -18,31 +40,46 @@ const techStack = [
     skills: [
       { name: "Django", icon: <SiDjango /> },
       { name: "Flask", icon: <SiFlask /> },
-      { name: "Flutter", icon: <SiFlutter /> },
-    ],
-  },
-  {
-    category: "Frontend",
-    skills: [
-      { name: "React", icon: <FaReact /> },
-      { name: "HTML/CSS", icon: <FaCode /> },
-    ],
-  },
-  {
-    category: "Cloud & Databases",
-    skills: [
+      { name: "FastAPI", icon: <RiFlashlightFill /> }, 
       { name: "Firebase", icon: <SiFirebase /> },
-      { name: "SQL", icon: <SiMysql /> },
+      { name: "Hardhat", icon: <FaCode /> }, 
     ],
   },
   {
-    category: "Technical Skills",
+    category: "AI/ML",
     skills: [
-      { name: "Data Science", icon: <FaDatabase /> },
-      { name: "App Development", icon: <SiFlutter /> },
-      { name: "Web Development", icon: <FaReact /> },
-      { name: "Machine Learning", icon: <SiTensorflow /> },
+      { name: "Scikit-learn", icon: <FaChartLine /> }, 
+      { name: "TensorFlow", icon: <SiTensorflow /> },
+      { name: "PyTorch", icon: <SiPytorch /> },
+      { name: "OpenCV", icon: <FaCode /> }, 
+      { name: "Pandas", icon: <FaDatabase /> }, 
+      { name: "NumPy", icon: <FaChartLine /> }, 
+      { name: "Matplotlib", icon: <FaChartLine /> },
+      { name: "Prompt Engineering", icon: <FaBrain /> },
+    ],
+  },
+  {
+    category: "Tools & Platforms",
+    skills: [
+      { name: "Git", icon: <FaGitAlt /> },
+      { name: "GitHub", icon: <FaGithub /> },
+      { name: "MySQL", icon: <SiMysql /> },
+      { name: "Firebase", icon: <SiFirebase /> },
+      { name: "Docker", icon: <FaDocker /> },
+      { name: "AWS", icon: <FaAws /> },
+      { name: "GCP", icon: <SiGooglecloud /> },
+      { name: "Twilio", icon: <FaCode /> }, 
+      { name: "AI Studios", icon: <FaRobot /> },
+    ],
+  },
+  {
+    category: "Technical Domains",
+    skills: [
       { name: "DSA", icon: <FaCode /> },
+      { name: "Machine Learning", icon: <SiTensorflow /> },
+      { name: "Prompt Engineering", icon: <FaBrain /> },
+      { name: "Web Development", icon: <FaReact /> },
+      { name: "App Development", icon: <SiFlutter /> },
     ],
   },
 ];
