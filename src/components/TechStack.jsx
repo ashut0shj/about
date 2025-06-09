@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { 
   FaPython, FaReact, FaDatabase, FaCode, FaGitAlt, FaGithub, 
   FaDocker, FaAws, FaHtml5, FaCss3Alt, FaChartLine, FaBrain, 
-  FaRobot
+  FaRobot, FaLinux
 } from "react-icons/fa";
 import { 
   SiCplusplus, SiDjango, SiFlask, SiFirebase, SiFlutter, 
@@ -61,6 +61,7 @@ const techStack = [
   {
     category: "Tools & Platforms",
     skills: [
+      { name: "Linux", icon: <FaLinux /> },
       { name: "Git", icon: <FaGitAlt /> },
       { name: "GitHub", icon: <FaGithub /> },
       { name: "MySQL", icon: <SiMysql /> },
