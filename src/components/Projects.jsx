@@ -3,9 +3,17 @@ import { useState } from "react";
 
 const projects = [
   {
+    title: "CodePlus",
+    description:
+      "Built a full-stack system to manage and visualize Codeforces performance for competitive programming groups. Integrated automated data sync via cron jobs, inactivity email reminders, and optimized API usage through caching and manual refresh logic.",
+    tech: ["MERN Stack", "Recharts", "Cron", "Codeforces API", "Mailing Service"],
+    link: "https://github.com/ashut0shj/TLE-CodePlus",
+    liveDemo: "https://tle-code-plus.vercel.app",
+  },
+  {
     title: "Study-Simplify",
     description:
-      "Built an AI-powered platform to transcribe, summarize, and generate questions from PDFs, PPTs, and images using FastAPI and NLP models. Used Tesseract OCR, T5, and BERT for text extraction, summarization, and question generation.",
+      "Developed an AI-powered platform to transcribe, summarize, and generate questions from PDFs, PPTs, and handwritten notes. Leveraged Tesseract OCR for text extraction and NLP models like T5 and BERT for downstream tasks.",
     tech: ["FastAPI", "React", "Tesseract OCR", "NLP", "Transformers", "T5", "BERT"],
     link: "https://github.com/ashut0shj/minor-study-simplify",
     liveDemo: "https://study-simplify-three.vercel.app",
@@ -13,53 +21,54 @@ const projects = [
   {
     title: "Crossword Puzzle Generator",
     description:
-      "Designed an automated crossword puzzle generator using Python and OpenAI for NLP, allowing users to create custom puzzles. Implemented word selection algorithms that generated puzzles with accurate difficulty scaling and user-defined themes.",
+      "Designed a puzzle generator that uses OpenAI for theme-based clue generation and NLP-powered difficulty scaling. Allows custom crossword creation for education and gamification use cases.",
     tech: ["AI Algorithms", "OpenAI", "Flask", "Python", "OOP", "NLP", "LLM"],
     link: "https://github.com/ashut0shj/CrosswordPuzzleGenerator",
   },
   {
     title: "Ballot-Block",
     description:
-      "Built a decentralized voting platform with Solidity and React, enabling secure, member-only, tamper-proof elections. Used IPFS for immutable metadata storage and integrated MetaMask for authentication and real-time vote tracking.",
+      "Built a decentralized voting platform using Solidity and React for secure, transparent elections. Used IPFS for tamper-proof storage and MetaMask for user authentication.",
     tech: ["Solidity", "Hardhat", "React", "Ethers.js", "IPFS", "MetaMask"],
     link: "https://github.com/ashut0shj/e-voting",
   },
   {
     title: "Swift Guess",
     description:
-      "Released a guessing game on Android, Web, and Windows with dynamic difficulty levels, hint system, scoring, and UI inspired by aesthetics. Integrated Firebase for real-time word/hint fetching, and added features like animated feedback, heart-based lives, and persistent local high scores.",
+      "Released a cross-platform guessing game with animated feedback, heart-based lives, hints, and local score tracking. Integrated Firebase for real-time word/hint fetching and smooth gameplay on Android, Web, and Windows.",
     tech: ["Flutter", "Firebase", "Dart"],
     link: "https://github.com/ashut0shj/swift_guess",
     liveDemo: "https://swift-guess.vercel.app/",
   },
   {
-    title: "IIITNR-APP",
+    title: "IIITNR App",
     description:
-      "Developed a cross-platform mobile app for IIIT Naya Raipur to streamline event registrations, requisitions, and student club management. Integrated Firebase for real-time data updates, authentication, and cloud storage, ensuring secure and smooth operation across both Android and iOS platforms.",
+      "Built an event and club management app for IIIT-NR to streamline registrations, requests, and updates. Integrated Firebase for authentication, real-time sync, and cloud storage across Android and iOS devices.",
     tech: ["Flutter", "Firebase", "Dart"],
     link: "https://github.com/ashut0shj/iiit-app",
   },
   {
     title: "Google Sheets Mail Merge with Gmail",
     description:
-      "Automated bulk email sending using Google Sheets and Gmail. Fetches recipient details from a sheet, merges placeholders into a Gmail draft, and sends personalized emails automatically. Supports CC, inline images, attachments, and email tracking.",
+      "Automated bulk email campaigns using Google Apps Script. Pulls contact data from Sheets and sends personalized emails via Gmail, with support for inline images, attachments, CCs, and open tracking.",
     tech: ["Google Apps Script", "Gmail API", "Google Sheets"],
     link: "https://github.com/ashut0shj/mail_merge"
   },
   {
-    title: "Image Quality Enhancement",
-    description:
-      "An IEEE research project on image enhancement using sequential filtering techniques.",
-    tech: ["Python", "OpenCV", "Image Processing"],
-    link: "#",
-  },
-  {
     title: "RFID-Based Home Security System",
     description:
-      "Developed an RFID-based security solution for home use, integrating OTP and RFID tags for secure door access with a built-in alarm system, using RaspberryPi. Designed to offer a scalable, affordable security option for residential purposes.",
+      "Developed a secure, low-cost home security system using RFID tags and OTP verification with Raspberry Pi. Includes alarm triggers and user-friendly access management.",
     tech: ["Raspberry Pi", "RFID", "Python", "IoT"],
     link: "https://github.com/ashut0shj/doorlock",
   },
+  {
+    title: "Image Quality Enhancement",
+    description:
+      "An IEEE research project focused on improving image clarity using sequential filtering techniques and classical computer vision methods.",
+    tech: ["Python", "OpenCV", "Image Processing"],
+    link: "#",
+  },
+
 ];
 
 const Projects = () => {
@@ -120,7 +129,7 @@ const Projects = () => {
                   href={project.liveDemo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 bg-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-500 transition-all duration-300 text-sm"
+                  className="inline-block px-8 py-2 bg-green-500 text-white font-semibold rounded-md shadow-md hover:bg-green-500 transition-all duration-300 text-sm border-2 border-black"
                   onClick={(e) => e.stopPropagation()}
                 >
                   Live Demo →
