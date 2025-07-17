@@ -69,77 +69,7 @@ const Contact = () => {
         ))}
       </div>
 
-      <motion.form
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        onSubmit={sendEmail}
-        className="relative max-w-lg mx-auto p-8 rounded-lg shadow-lg border border-purple-600 bg-purpleCard overflow-hidden"
-      >
-        {["user_name", "user_email", "message"].map((field, index) => (
-          <motion.div
-            key={field}
-            className="mb-6 relative"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: index * 0.2 }}
-          >
-            <label className="block text-left text-gray-300 text-sm mb-1">
-              {field === "user_name"
-                ? "Your Name"
-                : field === "user_email"
-                ? "Your Email"
-                : "Message"}
-            </label>
-            {field !== "message" ? (
-              <motion.input
-                whileFocus={{ scale: 1.02 }}
-                type={field === "user_email" ? "email" : "text"}
-                name={field}
-                required
-                placeholder={
-                  field === "user_name"
-                    ? "Enter your name"
-                    : "Enter your email"
-                }
-                className="w-full p-3 bg-darkBg border border-gray-600 rounded-md focus:border-yellowAccent focus:ring-2 focus:ring-yellowAccent transition"
-              />
-            ) : (
-              <motion.textarea
-                whileFocus={{ scale: 1.02 }}
-                name={field}
-                rows="4"
-                required
-                placeholder="Write your message here..."
-                className="w-full p-3 bg-darkBg border border-gray-600 rounded-md focus:border-yellowAccent focus:ring-2 focus:ring-yellowAccent transition"
-              ></motion.textarea>
-            )}
-          </motion.div>
-        ))}
 
-        <motion.button
-          type="submit"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 200 }}
-          className="w-full bg-yellowAccent text-darkBg font-bold py-3 rounded-md hover:bg-purple-700 transition"
-        >
-          {status}
-        </motion.button>
-      </motion.form>
-
-      <AnimatePresence>
-        {showPopup && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-            className="fixed top-20 right-5 bg-yellowAccent text-darkBg p-4 rounded-lg shadow-lg"
-          >
-            🎉 Message Sent Successfully!
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Closing Image & Quote */}
       <motion.div
