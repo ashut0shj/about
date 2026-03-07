@@ -107,9 +107,9 @@ const Experience = () => {
             className="bg-darkBg p-6 rounded-lg shadow-lg max-w-md w-full text-white"
           >
             <h3 className="text-xl font-semibold text-yellowAccent">
-              {selectedExp.role}
+              {selectedExp.company}
             </h3>
-            <p className="text-gray-100">{selectedExp.company}</p>
+            <p className="text-gray-100">{selectedExp.role}</p>
             <p className="text-gray-200 mt-2">{selectedExp.description}</p>
 
             <button

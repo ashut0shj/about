@@ -22,7 +22,6 @@ const About = () => {
   I am a poha enthusiast I love building cool and useful tech—whether it’s web apps, AI tools, or something completely new.  
   I enjoy solving problems, breaking things (so I can fix them better), and making tech do the hard work.
   <br /><br />
-  I work with C/C++, Python, JavaScript, Django, React, and Solidity, always looking for new ways to create and innovate.  
   If there’s a challenge, you’ll probably find me debugging it at 2 AM.
   <br /><br />
   When I'm not coding, you’ll probably find me debugging my life choices or pretending to be productive.
