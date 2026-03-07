@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-
 const projects = [
+  {
+    title: "PosterStash",
+    description:
+      "Built a campus e-commerce platform where students can buy and sell posters. Added Google login, role-based access, and secure online payments using Razorpay. Deployed backend services on AWS EC2 with CI/CD, used Firebase and AWS S3 for storage, and scaled the platform to 1000+ users with more than 5000 orders across campuses.",
+    tech: ["React", "FastAPI", "AWS EC2", "Firebase", "AWS S3", "Razorpay"],
+    liveDemo: "https://posterstash.scifre.in",
+  },
   {
     title: "CodePlus",
     description:
@@ -13,29 +19,29 @@ const projects = [
   {
     title: "Study-Simplify",
     description:
-      "Developed an AI-powered platform to transcribe, summarize, and generate questions from PDFs, PPTs, and handwritten notes. Leveraged Tesseract OCR for text extraction and NLP models like T5 and BERT for downstream tasks.",
-    tech: ["FastAPI", "React", "Tesseract OCR", "NLP", "Transformers", "T5", "BERT"],
+      "Developed a platform that can transcribe, summarize, and generate questions from PDFs, PPTs, and handwritten notes. Used Tesseract OCR for text extraction and NLP models like T5 and BERT for summarization and question generation.",
+    tech: ["FastAPI", "React", "Tesseract OCR", "Transformers", "T5", "BERT"],
     link: "https://github.com/ashut0shj/minor-study-simplify",
     liveDemo: "https://study-simplify-three.vercel.app",
   },
   {
     title: "Crossword Puzzle Generator",
     description:
-      "Designed a puzzle generator that uses OpenAI for theme-based clue generation and NLP-powered difficulty scaling. Allows custom crossword creation for education and gamification use cases.",
-    tech: ["AI Algorithms", "OpenAI", "Flask", "Python", "OOP", "NLP", "LLM"],
+      "Built a crossword puzzle generator that creates theme-based clues using OpenAI. Added difficulty scaling and tools for generating custom puzzles for learning and games.",
+    tech: ["Python", "Flask", "OpenAI", "NLP", "OOP"],
     link: "https://github.com/ashut0shj/CrosswordPuzzleGenerator",
   },
   {
     title: "Ballot-Block",
     description:
-      "Built a decentralized voting platform using Solidity and React for secure, transparent elections. Used IPFS for tamper-proof storage and MetaMask for user authentication.",
+      "Built a decentralized voting platform using Solidity and React for secure and transparent elections. Used IPFS for storing voting data and MetaMask for user authentication.",
     tech: ["Solidity", "Hardhat", "React", "Ethers.js", "IPFS", "MetaMask"],
     link: "https://github.com/ashut0shj/e-voting",
   },
   {
     title: "Swift Guess",
     description:
-      "Released a cross-platform guessing game with animated feedback, heart-based lives, hints, and local score tracking. Integrated Firebase for real-time word/hint fetching and smooth gameplay on Android, Web, and Windows.",
+      "Developed a cross-platform word guessing game with animated feedback, hints, and score tracking. Used Firebase to fetch words and hints and support gameplay across Android, Web, and Windows.",
     tech: ["Flutter", "Firebase", "Dart"],
     link: "https://github.com/ashut0shj/swift_guess",
     liveDemo: "https://swift-guess.vercel.app/",
@@ -43,32 +49,31 @@ const projects = [
   {
     title: "IIITNR App",
     description:
-      "Built an event and club management app for IIIT-NR to streamline registrations, requests, and updates. Integrated Firebase for authentication, real-time sync, and cloud storage across Android and iOS devices.",
+      "Built an event and club management app for IIIT Naya Raipur to manage registrations, requests, and announcements. Used Firebase for authentication, real-time database, and storage.",
     tech: ["Flutter", "Firebase", "Dart"],
     link: "https://github.com/ashut0shj/iiit-app",
   },
   {
     title: "Google Sheets Mail Merge with Gmail",
     description:
-      "Automated bulk email campaigns using Google Apps Script. Pulls contact data from Sheets and sends personalized emails via Gmail, with support for inline images, attachments, CCs, and open tracking.",
+      "Built a Google Apps Script tool to send personalized bulk emails using data from Google Sheets. Supports inline images, attachments, CC, and basic open tracking.",
     tech: ["Google Apps Script", "Gmail API", "Google Sheets"],
-    link: "https://github.com/ashut0shj/mail_merge"
+    link: "https://github.com/ashut0shj/mail_merge",
   },
   {
     title: "RFID-Based Home Security System",
     description:
-      "Developed a secure, low-cost home security system using RFID tags and OTP verification with Raspberry Pi. Includes alarm triggers and user-friendly access management.",
+      "Developed a home security system using RFID tags and OTP verification with Raspberry Pi. Added alarm triggers and simple access management for secure entry.",
     tech: ["Raspberry Pi", "RFID", "Python", "IoT"],
     link: "https://github.com/ashut0shj/doorlock",
   },
   {
     title: "Image Quality Enhancement",
     description:
-      "An IEEE research project focused on improving image clarity using sequential filtering techniques and classical computer vision methods.",
+      "Worked on an IEEE research project focused on improving image clarity using sequential filtering and classical computer vision techniques.",
     tech: ["Python", "OpenCV", "Image Processing"],
     link: "#",
   },
-
 ];
 
 const Projects = () => {

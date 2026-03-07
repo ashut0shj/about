@@ -4,28 +4,28 @@ import { FaBriefcase, FaCode, FaMoneyBill } from "react-icons/fa";
 
 const experiences = [
   {
-    year: "2025 - Present",
-    role: "Senior Placement Coordinator",
-    company: "Training and Placement Cell, IIIT Naya Raipur",
+    year: "Dec 2025 - Present",
+    role: "Software Development Intern",
+    company: "OneBanc Technologies Pvt. Ltd. — House of Product, Gurgaon",
     description:
-      "Leading the placement team, coordinating campus recruitment drives, and ensuring smooth interactions between students and recruiters. Implementing new strategies to improve placement processes and student employability.",
+      "Worked on a salary routing and notification system that processes structured salary data from APIs and sends alerts through WhatsApp, SMS, and Email. Added data validation like schema checks, Luhn checks, and phone/email verification. Built a config-based template system to generate employee messages without hard coding, developed internal APIs and tools for salary workflows, worked on forward proxy setup for external APIs, and added logging and error handling to make the system more reliable.",
     icon: <FaBriefcase />,
   },
   {
-    year: "2024 - Present",
-    role: "Vice Secretary",
-    company: "The Society of Coders, IIIT Naya Raipur",
+    year: "Sept 2025 - Dec 2025",
+    role: "Software Development Intern",
+    company: "SKDIV Industries Pvt. Ltd. — Remote, Australia",
     description:
-      "Led the organization of coding contests and hackathons. Mentored junior students in problem-solving, conducted workshops, and fostered a collaborative learning environment.",
+      "Worked on an Electron.js social media desktop app for Windows and Mac. Built chat and user interaction features, implemented real-time messaging using WebSockets, and added local caching to keep chats responsive. Connected the frontend with backend APIs for authentication and message syncing, and set up CI/CD workflows to automate builds and testing.",
     icon: <FaCode />,
   },
   {
-    year: "2022 - 2023",
-    role: "Events and PR Member",
-    company: "E-Cell IIIT-NR",
+    year: "Aug 2024 - May 2025",
+    role: "Software Development Intern",
+    company: "KNUCT Technologies — Remote, Delhi",
     description:
-      "Organized and executed entrepreneurship-related events, managed public relations, and coordinated with external partners for guest lectures and workshops.",
-    icon: <FaMoneyBill />,
+      "Built Python-based data processing pipelines and improved data transformation performance. Created reusable utilities and added automated validation checks to make the processing workflows more reliable.",
+    icon: <FaCode />,
   },
 ];
 
