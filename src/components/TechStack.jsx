@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { 
   FaPython, FaReact, FaDatabase, FaCode, FaGitAlt, FaGithub, 
   FaDocker, FaAws, FaHtml5, FaCss3Alt, FaChartLine, FaBrain, 
-  FaRobot, FaLinux
+  FaRobot, FaLinux, FaNodeJs
 } from "react-icons/fa";
 import { 
   SiCplusplus, SiDjango, SiFlask, SiFirebase, SiFlutter, 
   SiJavascript, SiMysql, SiTensorflow, SiTailwindcss, 
-  SiPytorch, SiGooglecloud 
+  SiPytorch, SiGooglecloud, SiPostgresql, SiMongodb, SiRedis
 } from "react-icons/si";
 
 import { RiFlashlightFill } from "react-icons/ri"; 
