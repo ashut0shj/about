@@ -52,7 +52,7 @@ const Contact = () => {
 
       <div className="flex justify-center gap-6 mb-12">
         {[
-          { icon: FaEnvelope, link: "mailto:ashutosh22102@iiitnr.edu.in" },
+          { icon: FaEnvelope, link: "mailto:ashutoshj11100@gmail.com" },
           { icon: FaGithub, link: "https://github.com/ashut0shj" },
           { icon: FaLinkedin, link: "https://www.linkedin.com/in/ashut0sh28/" },
           { icon: FaWhatsapp, link: "https://wa.me/9129093900" },
