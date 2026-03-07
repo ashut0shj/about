@@ -1,34 +1,7 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 import { FaEnvelope, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
-  const [status, setStatus] = useState("Send Message");
-  const [showPopup, setShowPopup] = useState(false);
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-
-    emailjs
-      .sendForm(
-        "service_qj0iux2",
-        "template_fswro4x",
-        e.target,
-        "Nf_1585r3JYAPjOq3"
-      )
-      .then(() => {
-        setStatus("Send Message");
-        e.target.reset();
-        setShowPopup(true);
-        setTimeout(() => setShowPopup(false), 3000);
-      })
-      .catch(() => {
-        setStatus("Failed! Try Again");
-        setTimeout(() => setStatus("Send Message"), 3000);
-      });
-  };
 
   return (
     <section id="contact" className="py-16 px-8 text-center relative">

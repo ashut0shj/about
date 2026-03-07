@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaBriefcase, FaCode, FaMoneyBill } from "react-icons/fa";
+import { FaBriefcase, FaCode } from "react-icons/fa";
 
 const experiences = [
   {
