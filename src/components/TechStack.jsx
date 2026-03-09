@@ -1,128 +1,152 @@
+import { memo } from "react";
 import { motion } from "framer-motion";
-import { 
-  FaPython, FaReact, FaDatabase, FaCode, FaGithub, 
-  FaDocker, FaAws, FaChartLine, FaBrain, 
-  FaLinux, FaNodeJs
+import {
+  FaPython, FaReact, FaDatabase, FaCode, FaGithub,
+  FaDocker, FaAws, FaChartLine, FaBrain, FaLinux, FaNodeJs
 } from "react-icons/fa";
-import { 
-  SiCplusplus, SiDjango, SiFlask, SiFirebase, SiFlutter, 
-  SiJavascript, SiMysql, SiTailwindcss, 
-  SiGooglecloud, SiPostgresql, SiMongodb, SiRedis
+import {
+  SiCplusplus, SiDjango, SiFlask, SiFirebase, SiFlutter,
+  SiJavascript, SiMysql, SiTailwindcss, SiGooglecloud,
+  SiPostgresql, SiMongodb, SiRedis
 } from "react-icons/si";
-
-import { RiFlashlightFill } from "react-icons/ri"; 
+import { RiFlashlightFill } from "react-icons/ri";
 
 const techStack = [
   {
     category: "Languages",
+    color: "#c084fc",
     skills: [
-      { name: "C#", icon: <FaCode /> },
-      { name: "Python", icon: <FaPython /> },
-      { name: "C/C++", icon: <SiCplusplus /> },
-      { name: "JavaScript", icon: <SiJavascript /> },
-      { name: "Dart", icon: <SiFlutter /> },
-      { name: "Solidity", icon: <FaCode /> },
+      { name: "Python", icon: FaPython },
+      { name: "C/C++", icon: SiCplusplus },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Dart", icon: SiFlutter },
+      { name: "C#", icon: FaCode },
+      { name: "Solidity", icon: FaCode },
     ],
   },
   {
     category: "Frontend",
+    color: "#61dafb",
     skills: [
-      { name: "React", icon: <FaReact /> },
-      { name: "Flutter", icon: <SiFlutter /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-      { name: "Electron.js", icon: <FaCode /> },
+      { name: "React", icon: FaReact },
+      { name: "Flutter", icon: SiFlutter },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "Electron.js", icon: FaCode },
     ],
   },
   {
     category: "Backend",
+    color: "#f59e0b",
     skills: [
-      { name: "ASP.NET", icon: <FaCode /> },
-      { name: "Node.js", icon: <FaNodeJs /> },
-      { name: "Express.js", icon: <FaNodeJs /> },
-      { name: "FastAPI", icon: <RiFlashlightFill /> },
-      { name: "Django", icon: <SiDjango /> },
-      { name: "Flask", icon: <SiFlask /> },
-      { name: "REST APIs", icon: <FaCode /> },
-      { name: "WebSockets", icon: <FaCode /> },
+      { name: "Node.js", icon: FaNodeJs },
+      { name: "FastAPI", icon: RiFlashlightFill },
+      { name: "Django", icon: SiDjango },
+      { name: "Flask", icon: SiFlask },
+      { name: "ASP.NET", icon: FaCode },
+      { name: "WebSockets", icon: FaCode },
+      { name: "Express.js", icon: FaNodeJs },
+      { name: "REST APIs", icon: FaCode },
     ],
   },
   {
     category: "Databases",
+    color: "#34d399",
     skills: [
-      { name: "PostgreSQL", icon: <SiPostgresql /> },
-      { name: "MySQL", icon: <SiMysql /> },
-      { name: "MongoDB", icon: <SiMongodb /> },
-      { name: "Redis", icon: <SiRedis /> },
-      { name: "IndexedDB", icon: <FaDatabase /> },
-      { name: "Firebase", icon: <SiFirebase /> },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql },
+      { name: "Redis", icon: SiRedis },
+      { name: "Firebase", icon: SiFirebase },
+      { name: "IndexedDB", icon: FaDatabase },
     ],
   },
   {
     category: "Cloud & DevOps",
+    color: "#fb923c",
     skills: [
-      { name: "AWS", icon: <FaAws /> },
-      { name: "Google Cloud", icon: <SiGooglecloud /> },
-      { name: "Docker", icon: <FaDocker /> },
-      { name: "CI/CD", icon: <FaCode /> },
-      { name: "GitHub Actions", icon: <FaGithub /> },
-      { name: "Linux", icon: <FaLinux /> },
-      { name: "Shell Scripting", icon: <FaCode /> },
-      { name: "Postman", icon: <FaCode /> },
+      { name: "AWS", icon: FaAws },
+      { name: "Docker", icon: FaDocker },
+      { name: "Linux", icon: FaLinux },
+      { name: "GitHub Actions", icon: FaGithub },
+      { name: "Google Cloud", icon: SiGooglecloud },
+      { name: "CI/CD", icon: FaCode },
     ],
   },
   {
     category: "AI / ML",
+    color: "#a78bfa",
     skills: [
-      { name: "RAG", icon: <FaBrain /> },
-      { name: "LLM", icon: <FaBrain /> },
-      { name: "Scikit-learn", icon: <FaChartLine /> },
-      { name: "OpenCV", icon: <FaCode /> },
-      { name: "Transformers", icon: <FaBrain /> },
-      { name: "Pandas", icon: <FaDatabase /> },
-      { name: "NumPy", icon: <FaChartLine /> },
+      { name: "LLMs & RAG", icon: FaBrain },
+      { name: "Transformers", icon: FaBrain },
+      { name: "Scikit-learn", icon: FaChartLine },
+      { name: "OpenCV", icon: FaCode },
+      { name: "Pandas", icon: FaDatabase },
+      { name: "NumPy", icon: FaChartLine },
     ],
   },
 ];
 
-const TechStack = () => {
-  return (
-    <section id="techstack" className="py-16 text-center">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-        className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent mb-8"
+const CategoryCard = memo(({ cat, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "-30px" }}
+    transition={{ duration: 0.5, delay: index * 0.07 }}
+    className="rounded-xl border border-white/[0.08] p-7 hover:border-white/15 transition-colors duration-300"
+    style={{ background: "rgba(255,255,255,0.03)" }}
+  >
+    {/* Category header */}
+    <div className="flex items-center gap-3 mb-6">
+      <div
+        className="w-3 h-3 rounded-full flex-shrink-0"
+        style={{ background: cat.color, boxShadow: `0 0 10px ${cat.color}90` }}
+      />
+      <h3 className="text-xl font-semibold text-gray-100">{cat.category}</h3>
+    </div>
+
+    {/* Skills grid — 2 columns, big readable rows */}
+    <div className="grid grid-cols-2 gap-3">
+      {cat.skills.map(({ name, icon: Icon }) => (
+        <div
+          key={name}
+          className="flex items-center gap-3 px-3 py-2.5 rounded-lg group hover:bg-white/[0.05] transition-colors duration-200"
+        >
+          <Icon size={18} style={{ color: cat.color, opacity: 0.9 }} className="flex-shrink-0" />
+          <span className="text-gray-200 text-base group-hover:text-white transition-colors duration-200">{name}</span>
+        </div>
+      ))}
+    </div>
+  </motion.div>
+));
+
+const TechStack = () => (
+  <section id="techstack" className="py-24 px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="mb-12"
+    >
+      <h2
+        className="text-4xl font-bold"
+        style={{
+          background: "linear-gradient(135deg, #c084fc, #ec4899, #f59e0b)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
+        }}
       >
         Tech Stack
-      </motion.h2>
+      </h2>
+    </motion.div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-        {techStack.map((category, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className="bg-purpleCard p-6 rounded-lg shadow-lg text-left"
-          >
-            <h3 className="text-2xl font-semibold text-yellowAccent mb-4">
-              {category.category}
-            </h3>
-            <div className="grid grid-cols-2 gap-4">
-              {category.skills.map((skill, i) => (
-                <div key={i} className="flex items-center gap-2 text-white">
-                  <span className="text-xl">{skill.icon}</span>
-                  <p>{skill.name}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  );
-};
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {techStack.map((cat, i) => (
+        <CategoryCard key={cat.category} cat={cat} index={i} />
+      ))}
+    </div>
+  </section>
+);
 
-export default TechStack;
+export default memo(TechStack);

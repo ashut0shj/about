@@ -1,128 +1,189 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { FaBriefcase, FaCode } from "react-icons/fa";
+import { memo, useState, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaBriefcase, FaCode, FaTimes } from "react-icons/fa";
 
 const experiences = [
   {
-    year: "Dec 2025 - Present",
+    period: "Dec 2025 – Present",
     role: "Software Development Intern",
-    company: "OneBanc Technologies Pvt. Ltd. — House of Product, Gurgaon",
+    company: "OneBanc Technologies",
+    location: "Gurgaon, India",
     description:
-      "Worked on a salary routing and notification system that processes structured salary data from APIs and sends alerts through WhatsApp, SMS, and Email. Added data validation like schema checks, Luhn checks, and phone/email verification. Built a config-based template system to generate employee messages without hard coding, developed internal APIs and tools for salary workflows, worked on forward proxy setup for external APIs, and added logging and error handling to make the system more reliable.",
-    icon: <FaBriefcase />,
+      "Built a salary routing and notification system that processes structured salary data from APIs and sends alerts through WhatsApp, SMS, and Email. Added schema validation, Luhn checks, and phone/email verification. Built a config-based template system, developed internal APIs, worked on forward proxy setup, and added robust logging and error handling.",
+    tags: ["Python", "REST APIs", "WhatsApp API", "Data Validation"],
+    icon: FaBriefcase,
+    current: true,
   },
   {
-    year: "Sept 2025 - Dec 2025",
+    period: "Sept 2025 – Dec 2025",
     role: "Software Development Intern",
-    company: "SKDIV Industries Pvt. Ltd. — Remote, Australia",
+    company: "SKDIV Industries",
+    location: "Remote, Australia",
     description:
-      "Worked on an Electron.js social media desktop app for Windows and Mac. Built chat and user interaction features, implemented real-time messaging using WebSockets, and added local caching to keep chats responsive. Connected the frontend with backend APIs for authentication and message syncing, and set up CI/CD workflows to automate builds and testing.",
-    icon: <FaCode />,
+      "Worked on an Electron.js social media desktop app for Windows and Mac. Built chat and user interaction features, implemented real-time messaging with WebSockets, and added local caching for responsiveness. Connected frontend with backend APIs and set up CI/CD workflows for automated builds and testing.",
+    tags: ["Electron.js", "WebSockets", "CI/CD", "Desktop App"],
+    icon: FaCode,
   },
   {
-    year: "Aug 2024 - May 2025",
+    period: "Aug 2024 – May 2025",
     role: "Software Development Intern",
-    company: "KNUCT Technologies — Remote, Delhi",
+    company: "KNUCT Technologies",
+    location: "Remote, Delhi",
     description:
-      "Built Python-based data processing pipelines and improved data transformation performance. Created reusable utilities and added automated validation checks to make the processing workflows more reliable.",
-    icon: <FaCode />,
+      "Built Python-based data processing pipelines and improved data transformation performance. Created reusable utilities and automated validation checks to make processing workflows more reliable.",
+    tags: ["Python", "Data Pipelines", "ETL", "Validation"],
+    icon: FaCode,
   },
 ];
 
+const ExperienceCard = memo(({ exp, index, onExpand }) => {
+  const Icon = exp.icon;
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative pl-12 pb-12 last:pb-0"
+    >
+      {/* Timeline connector */}
+      {index < experiences.length - 1 && (
+        <div
+          className="absolute left-[14px] top-10 bottom-0 w-px"
+          style={{ background: "linear-gradient(to bottom, rgba(168,85,247,0.5), rgba(168,85,247,0.05))" }}
+        />
+      )}
+
+      {/* Timeline dot */}
+      <div
+        className="absolute left-0 top-2 w-7 h-7 rounded-full flex items-center justify-center"
+        style={{ background: "linear-gradient(135deg, #7c3aed, #a855f7)", boxShadow: "0 0 14px rgba(168,85,247,0.5)" }}
+      >
+        <Icon size={12} className="text-white" />
+      </div>
+
+      {/* Card */}
+      <div
+        className="rounded-xl border p-6 transition-all duration-300 hover:border-purple-500/40"
+        style={{
+          background: "rgba(255,255,255,0.04)",
+          borderColor: exp.current ? "rgba(168,85,247,0.3)" : "rgba(255,255,255,0.08)",
+        }}
+      >
+        {/* Company first, period on right */}
+        <div className="flex items-start justify-between flex-wrap gap-2 mb-2">
+          <div>
+            <div className="flex items-center gap-3 flex-wrap mb-1">
+              <h3 className="text-xl font-bold text-white">{exp.company}</h3>
+              {exp.current && (
+                <span className="text-xs px-2.5 py-0.5  text-emerald-400  font-mono">
+                  Current
+                </span>
+              )}
+            </div>
+            {/* Role below company */}
+            <p className="text-base text-purple-300 font-medium">{exp.role}</p>
+            <p className="text-sm text-gray-500 mt-0.5">{exp.location}</p>
+          </div>
+          <span className="text-sm text-gray-500 font-mono whitespace-nowrap">{exp.period}</span>
+        </div>
+
+        {/* Description */}
+        <p className="text-gray-300 text-base leading-relaxed mt-4 hidden md:block">{exp.description}</p>
+        <p className="text-gray-300 text-base leading-relaxed mt-4 md:hidden line-clamp-3">{exp.description}</p>
+
+        <button
+          className="text-purple-400 text-sm mt-2 md:hidden hover:text-purple-300 transition-colors"
+          onClick={() => onExpand(exp)}
+        >
+          Read more →
+        </button>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2 mt-5">
+          {exp.tags.map((tag) => (
+            <span key={tag} className="text-sm px-3 py-1 rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/20 font-mono">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+});
+
 const Experience = () => {
-  const [selectedExp, setSelectedExp] = useState(null);
+  const [expanded, setExpanded] = useState(null);
+  const handleExpand = useCallback((exp) => setExpanded(exp), []);
+  const handleClose = useCallback(() => setExpanded(null), []);
 
   return (
-    <section id="experience" className="py-16 px-8 relative">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
+    <section id="experience" className="py-24 px-8">
+      {/* Header */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-yellow-500 bg-clip-text text-transparent text-center mb-12"
+        transition={{ duration: 0.5 }}
+        className="mb-12"
       >
-        Experience
-      </motion.h2>
+        <h2
+          className="text-4xl font-bold"
+          style={{
+            background: "linear-gradient(135deg, #c084fc, #ec4899, #f59e0b)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          Experience
+        </h2>
+      </motion.div>
 
-      <div className="relative">
-        {/* Timeline Line */}
-        <div className="absolute left-6 top-0 w-1 bg-gray-700 rounded-full h-full" />
-        <motion.div
-          className="absolute left-6 top-0 w-1 bg-gradient-to-b from-yellowAccent to-purple-700 rounded-full"
-          whileInView={{ height: "100%" }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          viewport={{ once: true }}
-        />
-
-        {experiences.map((exp, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }}
-            viewport={{ once: true }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 10px 20px rgba(255, 217, 0, 0.3)",
-              transition: { duration: 0.3, type: "spring", stiffness: 200 },
-            }}
-            className="mb-12 ml-16 relative"
-          >
-            {/* Icon */}
-            <div className="absolute -left-12 top-2 w-10 h-10 flex items-center justify-center bg-purple-700 text-white rounded-full shadow-md">
-              {exp.icon}
-            </div>
-
-            {/* Experience Content */}
-            <div className="bg-purpleCard p-6 rounded-lg shadow-lg border border-purple-500">
-              <p className="text-sm text-yellowAccent">{exp.year}</p>
-              <h3 className="text-xl font-semibold text-white">{exp.role}</h3>
-              <p className="text-gray">{exp.company}</p>
-
-              {/* Description for Desktop */}
-              <p className="text-gray-100 mt-2 hidden md:block">{exp.description}</p>
-
-              {/* Mobile View: Show Preview & Read More */}
-              <p className="text-gray-100 mt-2 md:hidden">
-                {exp.description.slice(0, 50)}...
-              </p>
-              <button
-                className="mt-2 text-yellowAccent md:hidden"
-                onClick={() => setSelectedExp(exp)}
-              >
-                Read More →
-              </button>
-            </div>
-          </motion.div>
+      {/* Timeline — full width, no max-w */}
+      <div>
+        {experiences.map((exp, i) => (
+          <ExperienceCard key={exp.company} exp={exp} index={i} onExpand={handleExpand} />
         ))}
       </div>
 
-      {/* Read More Modal */}
-      {selectedExp && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4">
+      {/* Mobile modal */}
+      <AnimatePresence>
+        {expanded && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            className="bg-darkBg p-6 rounded-lg shadow-lg max-w-md w-full text-white"
+            className="fixed inset-0 z-50 flex items-end md:items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={handleClose}
           >
-            <h3 className="text-xl font-semibold text-yellowAccent">
-              {selectedExp.company}
-            </h3>
-            <p className="text-gray-100">{selectedExp.role}</p>
-            <p className="text-gray-200 mt-2">{selectedExp.description}</p>
-
-            <button
-              className="mt-4 px-4 py-2 bg-purpleCard rounded-lg hover:bg-yellowAccent transition-all duration-300"
-              onClick={() => setSelectedExp(null)}
+            <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+            <motion.div
+              initial={{ y: 60, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 60, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-lg rounded-2xl border border-white/10 p-6 overflow-hidden"
+              style={{ background: "rgba(8,0,20,0.97)" }}
             >
-              Close
-            </button>
+              <div className="h-[2px] absolute top-0 left-0 right-0" style={{ background: "linear-gradient(90deg, #a855f7, #ec4899)" }} />
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <h3 className="text-xl font-bold text-white">{expanded.company}</h3>
+                  <p className="text-base text-purple-300 mt-0.5">{expanded.role}</p>
+                </div>
+                <button onClick={handleClose} className="p-1.5 text-gray-500 hover:text-white rounded-lg hover:bg-white/10 transition-all">
+                  <FaTimes size={16} />
+                </button>
+              </div>
+              <p className="text-gray-300 text-base leading-relaxed mt-3">{expanded.description}</p>
+            </motion.div>
           </motion.div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </section>
   );
 };
 
-export default Experience;
+export default memo(Experience);
