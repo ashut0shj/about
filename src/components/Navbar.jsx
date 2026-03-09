@@ -41,7 +41,7 @@ const Navbar = () => {
             to="/"
             className="font-mono text-lg font-bold tracking-tight"
             style={{
-              background: "linear-gradient(90deg, #c084fc, #f59e0b)",
+              background: "#f59e0b",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
