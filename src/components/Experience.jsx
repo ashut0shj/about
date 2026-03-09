@@ -1,7 +1,6 @@
 import { memo, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBriefcase, FaCode, FaTimes } from "react-icons/fa";
-
+import { FaBriefcase, FaCode, FaTimes,  FaRocket, FaChalkboardTeacher } from "react-icons/fa";
 const experiences = [
   {
     period: "Dec 2025 – Present",
@@ -9,30 +8,54 @@ const experiences = [
     company: "OneBanc Technologies",
     location: "Gurgaon, India",
     description:
-      "Built a salary routing and notification system that processes structured salary data from APIs and sends alerts through WhatsApp, SMS, and Email. Added schema validation, Luhn checks, and phone/email verification. Built a config-based template system, developed internal APIs, worked on forward proxy setup, and added robust logging and error handling.",
+      "Built backend APIs for a salary routing and notification platform processing structured financial data with real-time inputs. Implemented schema validation, Luhn checks and identity verification for financial identifiers to ensure data accuracy. Designed a config-driven template system for dynamic employee-wise message generation without hard-coded logic. Integrated WhatsApp, SMS and Email notifications through external APIs to support salary workflows. Worked on forward proxy setup, creating API config files and testing APIs. Added structured logging and error handling to improve reliability and debugging of data pipelines.",
     tags: ["Python", "REST APIs", "WhatsApp API", "Data Validation"],
     icon: FaBriefcase,
     current: true,
   },
+
   {
     period: "Sept 2025 – Dec 2025",
     role: "Software Development Intern",
     company: "SKDIV Industries",
     location: "Remote, Australia",
     description:
-      "Worked on an Electron.js social media desktop app for Windows and Mac. Built chat and user interaction features, implemented real-time messaging with WebSockets, and added local caching for responsiveness. Connected frontend with backend APIs and set up CI/CD workflows for automated builds and testing.",
+      "Built chat and user interaction features for an Electron.js social media desktop app on Windows and Mac. Integrated WebSockets for real-time messaging and added local caching to keep chats smooth and responsive. Connected frontend with backend APIs for authentication, user data and message syncing. Set up CI/CD workflows to automate desktop app builds, packaging and deployments for team testing.",
     tags: ["Electron.js", "WebSockets", "CI/CD", "Desktop App"],
     icon: FaCode,
   },
+
+  {
+    period: "Aug 2023 – Present",
+    role: "Co-founder & Technical Head",
+    company: "PosterStash",
+    location: "India",
+    description:
+      "Drove 110% profit growth by streamlining operations and designing a mobile-first user experience. Co-founded a poster e-commerce platform for campuses, scaling to multiple colleges through an ambassador network. Implemented Google OAuth2 with Firebase Auth and role-based access for admins and managers. Used Firebase Realtime DB for user data, AWS S3 for storing posters, and Razorpay for secure payments. Deployed on AWS EC2 with CI/CD pipelines, enabling scalable, reliable, and automated production rollouts.",
+    tags: ["React", "FastAPI", "AWS", "PostgreSQL", "Razorpay"],
+    icon: FaRocket,
+  },
+
   {
     period: "Aug 2024 – May 2025",
     role: "Software Development Intern",
     company: "KNUCT Technologies",
     location: "Remote, Delhi",
     description:
-      "Built Python-based data processing pipelines and improved data transformation performance. Created reusable utilities and automated validation checks to make processing workflows more reliable.",
+      "Built Python-based data processing pipelines and optimized transformations for better performance. Created reusable utilities and automated validation to improve reliability of processing workflows.",
     tags: ["Python", "Data Pipelines", "ETL", "Validation"],
     icon: FaCode,
+  },
+
+  {
+    period: "Jul 2024 – Dec 2024",
+    role: "Teaching Assistant — Data Structures and Algorithms",
+    company: "IIIT Naya Raipur",
+    location: "Naya Raipur, India",
+    description:
+      "Mentored a selected cohort of 30 juniors, conducting regular DSA sessions and one-on-one doubt-clearing. Provided guidance on algorithms, code quality, and interview preparation with live problem-solving.",
+    tags: ["DSA", "Mentoring", "Algorithms"],
+    icon: FaChalkboardTeacher,
   },
 ];
 
