@@ -13,6 +13,38 @@ const projects = [
     highlight: true,
   },
   {
+    title: "HRBot-3000",
+    description:
+      "AI-powered resume screening platform using locally hosted Llama 3. Performs semantic resume-to-job matching with Nomic embeddings, hybrid rule-based evaluation, asynchronous inference using Celery and Redis, and Docker Compose deployment.",
+    tech: [
+      "Python",
+      "Flask",
+      "Llama 3",
+      "Nomic Embeddings",
+      "Celery",
+      "Redis",
+      "Docker",
+    ],
+    link: "https://github.com/ashut0shj/hrbot-3000",
+    highlight: true,
+  },
+  {
+    title: "Branch Loans",
+    description:
+      "Containerized microloans REST API built with Flask and PostgreSQL behind Nginx. Supports multi-environment Docker Compose, HTTPS-enabled local development, GitHub Actions CI/CD, automated testing, Trivy security scans, and production-ready deployments.",
+    tech: [
+      "Flask",
+      "PostgreSQL",
+      "Docker",
+      "Docker Compose",
+      "Nginx",
+      "GitHub Actions",
+      "Trivy",
+    ],
+    link: "https://github.com/ashut0shj/branch-loans-api",
+    highlight: true,
+  },
+  {
     title: "CodePlus",
     description:
       "Full-stack system to manage and visualize Codeforces performance for competitive programming groups. Automated data sync via cron jobs, inactivity email reminders, optimized API with caching.",

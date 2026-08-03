@@ -1,6 +1,8 @@
 import { memo, useState, useEffect, useCallback, useRef } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaWhatsapp, FaChevronDown } from "react-icons/fa";
+
+import { SiLeetcode } from "react-icons/si";
 import { useNavigate } from "react-router-dom";
 
 const StarCanvas = memo(() => {
@@ -107,6 +109,11 @@ const TypingEffect = memo(() => {
 const SOCIAL_LINKS = [
   { Icon: FaGithub, href: "https://github.com/ashut0shj", label: "GitHub" },
   { Icon: FaLinkedin, href: "https://www.linkedin.com/in/ashut0sh28/", label: "LinkedIn" },
+  {
+    Icon: SiLeetcode,
+    href: "https://leetcode.com/u/ashut0shj/",
+    label: "LeetCode",
+  },
   { Icon: FaWhatsapp, href: "https://wa.me/9129093900", label: "WhatsApp" },
 ];
 

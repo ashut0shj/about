@@ -3,25 +3,35 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaBriefcase, FaCode, FaTimes,  FaRocket, FaChalkboardTeacher } from "react-icons/fa";
 const experiences = [
   {
-    period: "Dec 2025 – Present",
-    role: "Software Development Intern",
-    company: "OneBanc Technologies",
+    period: "Dec 2025 – Apr 2026",
+    role: "Software Engineer Intern — House of Product",
+    company: "OneBanc Technologies Pvt. Ltd.",
     location: "Gurgaon, India",
     description:
-      "Built backend APIs for a salary routing and notification platform processing structured financial data with real-time inputs. Implemented schema validation, Luhn checks and identity verification for financial identifiers to ensure data accuracy. Designed a config-driven template system for dynamic employee-wise message generation without hard-coded logic. Integrated WhatsApp, SMS and Email notifications through external APIs to support salary workflows. Worked on forward proxy setup, creating API config files and testing APIs. Added structured logging and error handling to improve reliability and debugging of data pipelines.",
-    tags: ["Python", "REST APIs", "WhatsApp API", "Data Validation"],
+      "Built and improved backend systems in C#/.NET/ASP.NET for salary routing, financial systems and notifications, handling structured financial data with real-time API integrations. Wrote Python scripts to automate data validation pipelines with schema validation and Luhn checks to ensure data accuracy. Developed a config based template system to generate employee wise messages, reducing hard coded logic. Optimized Microsoft SQL Server queries and improved data workflows for faster and more reliable API integrations. Built internal APIs and backend tools to support salary processing and external system communication. Improved reliability by adding structured logging and robust error handling across data pipelines.",
+    tags: [".NET", "C#", "Python", "SQL Server", "REST APIs"],
     icon: FaBriefcase,
-    current: true,
   },
 
   {
     period: "Sept 2025 – Dec 2025",
     role: "Software Development Intern",
-    company: "SKDIV Industries",
-    location: "Remote, Australia",
+    company: "SKDIV Industries Pvt. Ltd.",
+    location: "Remote, Bangalore",
     description:
-      "Built chat and user interaction features for an Electron.js social media desktop app on Windows and Mac. Integrated WebSockets for real-time messaging and added local caching to keep chats smooth and responsive. Connected frontend with backend APIs for authentication, user data and message syncing. Set up CI/CD workflows to automate desktop app builds, packaging and deployments for team testing.",
-    tags: ["Electron.js", "WebSockets", "CI/CD", "Desktop App"],
+      "Built core features for an Electron.js based social media desktop application for Windows and Linux, focusing on chat and user interactions. Implemented real time messaging using WebSockets and ensured reliable message synchronization between client and server. Used IndexedDB to cache chats and user data locally, improving responsiveness and load times. Designed efficient client side data models and query logic for message storage and retrieval. Connected frontend with backend APIs and set up CI/CD workflows to automate builds, packaging and testing.",
+    tags: ["Electron.js", "WebSockets", "IndexedDB", "CI/CD"],
+    icon: FaCode,
+  },
+
+  {
+    period: "Aug 2024 – May 2025",
+    role: "Software Development Intern",
+    company: "KNUCT Technologies",
+    location: "Remote, Delhi",
+    description:
+      "Built Python based data processing pipelines and optimized data transformations for improved performance. Developed reusable utilities and automated validation workflows to increase the reliability and maintainability of processing pipelines.",
+    tags: ["Python", "Data Pipelines", "ETL", "Validation"],
     icon: FaCode,
   },
 
@@ -31,20 +41,9 @@ const experiences = [
     company: "PosterStash",
     location: "India",
     description:
-      "Drove 110% profit growth by streamlining operations and designing a mobile-first user experience. Co-founded a poster e-commerce platform for campuses, scaling to multiple colleges through an ambassador network. Implemented Google OAuth2 with Firebase Auth and role-based access for admins and managers. Used Firebase Realtime DB for user data, AWS S3 for storing posters, and Razorpay for secure payments. Deployed on AWS EC2 with CI/CD pipelines, enabling scalable, reliable, and automated production rollouts.",
-    tags: ["React", "FastAPI", "AWS", "PostgreSQL", "Razorpay"],
+      "Co-founded a campus e-commerce platform with Google authentication, role based access control and secure Razorpay payments. Designed Firebase collections for users, posters, carts and orders to support scalable data flow. Optimized backend APIs and database queries to improve order processing and data retrieval performance. Deployed the backend on AWS EC2 with CI/CD pipelines and used AWS S3 and Firebase for scalable storage. Successfully scaled the platform to more than 1000 users and over 5000 successful orders across multiple campuses.",
+    tags: ["React", "FastAPI", "AWS", "Firebase", "Razorpay"],
     icon: FaRocket,
-  },
-
-  {
-    period: "Aug 2024 – May 2025",
-    role: "Software Development Intern",
-    company: "KNUCT Technologies",
-    location: "Remote, Delhi",
-    description:
-      "Built Python-based data processing pipelines and optimized transformations for better performance. Created reusable utilities and automated validation to improve reliability of processing workflows.",
-    tags: ["Python", "Data Pipelines", "ETL", "Validation"],
-    icon: FaCode,
   },
 
   {
@@ -53,7 +52,7 @@ const experiences = [
     company: "IIIT Naya Raipur",
     location: "Naya Raipur, India",
     description:
-      "Mentored a selected cohort of 30 juniors, conducting regular DSA sessions and one-on-one doubt-clearing. Provided guidance on algorithms, code quality, and interview preparation with live problem-solving.",
+      "Mentored students in Data Structures and Algorithms through regular problem solving sessions and one on one doubt clearing. Guided juniors on algorithms, coding best practices and interview preparation while helping strengthen their problem solving skills.",
     tags: ["DSA", "Mentoring", "Algorithms"],
     icon: FaChalkboardTeacher,
   },

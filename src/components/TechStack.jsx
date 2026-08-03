@@ -1,13 +1,33 @@
 import { memo } from "react";
 import { motion } from "framer-motion";
 import {
-  FaPython, FaReact, FaDatabase, FaCode, FaGithub,
-  FaDocker, FaAws, FaChartLine, FaBrain, FaLinux, FaNodeJs
+  FaPython,
+  FaReact,
+  FaDatabase,
+  FaCode,
+  FaGithub,
+  FaDocker,
+  FaAws,
+  FaChartLine,
+  FaBrain,
+  FaLinux,
+  FaNodeJs,
 } from "react-icons/fa";
+
+
 import {
-  SiCplusplus, SiDjango, SiFlask, SiFirebase, SiFlutter,
-  SiJavascript, SiMysql, SiTailwindcss, SiGooglecloud,
-  SiPostgresql, SiMongodb, SiRedis
+  SiCplusplus,
+  SiDjango,
+  SiFlask,
+  SiFirebase,
+  SiJavascript,
+  SiMysql,
+  SiTailwindcss,
+  SiGooglecloud,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiFlutter
 } from "react-icons/si";
 import { RiFlashlightFill } from "react-icons/ri";
 
@@ -65,23 +85,30 @@ const techStack = [
     color: "#fb923c",
     skills: [
       { name: "AWS", icon: FaAws },
-      { name: "Docker", icon: FaDocker },
-      { name: "Linux", icon: FaLinux },
-      { name: "GitHub Actions", icon: FaGithub },
       { name: "Google Cloud", icon: SiGooglecloud },
+      { name: "Docker", icon: FaDocker },
+      { name: "Docker Compose", icon: FaDocker },
+      { name: "Nginx", icon: FaCode },
+      { name: "Git", icon: FaGithub },
+      { name: "GitHub Actions", icon: FaGithub },
       { name: "CI/CD", icon: FaCode },
+      { name: "Linux", icon: FaLinux },
+      { name: "Shell Scripting", icon: FaLinux },
+      { name: "Trivy", icon: FaCode },
     ],
   },
   {
     category: "AI / ML",
     color: "#a78bfa",
     skills: [
-      { name: "LLMs & RAG", icon: FaBrain },
-      { name: "Transformers", icon: FaBrain },
+      { name: "LLMs", icon: FaBrain },
+      { name: "RAG Pipelines", icon: FaBrain },
+      { name: "PyTorch", icon: FaBrain },
+      { name: "TensorFlow", icon: FaBrain },
       { name: "Scikit-learn", icon: FaChartLine },
-      { name: "OpenCV", icon: FaCode },
       { name: "Pandas", icon: FaDatabase },
       { name: "NumPy", icon: FaChartLine },
+      { name: "NLP", icon: FaBrain },
     ],
   },
 ];
